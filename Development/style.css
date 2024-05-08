@@ -306,21 +306,19 @@ body {
   left: 25px;
   top: 60px;
 }
-.what-is-the-name-of-the-card {
+.name-of-card-info {
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
-  position: absolute;
   left: 125px;
   top: 55px;
   pointer-events: auto;
   position: absolute;
   height: 25px;
-  width: 226px;
+  width: 225px;
 }
 .card-name-info-line {
   border-style: solid;
@@ -361,17 +359,18 @@ body {
   left: 25px;
   top: 106px;
 }
-.the-card-is-about {
+.about-card-info {
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
   position: absolute;
   left: 125px;
-  top: 106px;
+  top: 100px;
+  height: 25px;
+  width: 225px;
 }
 .explonation-info-line {
   border-style: solid;
@@ -412,17 +411,18 @@ body {
   left: 25px;
   top: 152px;
 }
-.when-the-card-will-be-finished {
+.finish-date-info{
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
   position: absolute;
   left: 125px;
-  top: 152px;
+  top: 146px;
+  height: 25px;
+  width: 225px;
 }
 .finish-info-line {
   border-style: solid;
