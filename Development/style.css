@@ -468,6 +468,52 @@ body {
   transform-origin: 0 0;
   transform: rotate(-90deg) scale(1, 1);
 }
+.confirm-btn {
+  background: #378CE7;
+  border-radius: 5px;
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  transition: scale 0.3s ease;
+}
+.confirm-btn:hover {
+  scale: 105%;
+}
+.confirm {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  left: 21px;
+  top: 6px;
+}
+.cancel-btn {
+  background: #a65151;
+  border-radius: 5px;
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  right: 130px;
+  bottom: 10px;
+  transition: scale 0.3s ease;
+}
+.cancel-btn:hover {
+  scale: 105%;
+}
+.cancel {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  left: 29px;
+  top: 6px;
+}
 .credit {
   color: #424242;
   text-align: left;
