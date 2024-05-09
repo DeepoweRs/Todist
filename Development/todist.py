@@ -3,7 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from flask_admin.contrib.sqla import ModelView
 
-app = Flask(__name__)
+'''app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///veritabani.db'  # SQLite veritabanı dosyası yolu
 app.config['SECRET_KEY'] = 'gizli_anahtar'  # Flask-Admin için gizli anahtar
 db = SQLAlchemy(app)
@@ -19,7 +19,7 @@ admin.add_view(ModelView(Tablo, db.session))
 
 if __name__ == '__main__':
     app.run(debug=True)
-
+'''
 
 app = Flask(__name__)
 
