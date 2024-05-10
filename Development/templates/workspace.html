@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workspace.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icons-logo/logo_shortcut.png') }}">
+</head>
+<body>
+    <div class="workspace">
+        <div class="main-bg">
+            <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
+        </div>
+        <div class="top-menu">
+          <img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/>
+          <a href="#"><div class="share-btn">
+            <div class="share-bg"></div>
+            <div class="share">Share</div>
+          </div></a>
+          <label for="fileInput" class="changebg-btn">
+            <div class="changebg-bg"></div>
+            <div class="changebg-text">Change BG</div>
+        </label>
+        <input type="file" id="fileInput" class="fileInput" onchange="changeBg(this)">        
+          <a href="#"><div class="top-rec"></div></a>
+          <a href="#"><div class="board">Board</div></a>
+          <a href="#"><div class="timeline">Timeline</div></a>
+          <a href="#"><div class="calendar">Calendar</div></a>
+          <a href="#"><div class="table">Table</div></a>
+          <a href="#"><div class="notes">Notes</div></a>
+        </div>
+        <a href="#"><div class="help-btn">
+            <div class="help-btn-bg"></div>
+            <div class="help-btn-glow"></div>
+            <div class="help">Help</div>
+        </div></a>
+        <div class="card-info">
+          <div class="card-info2">Card Info</div>
+          <div class="card-name-info">
+            <div class="card-name2">Card Name</div>
+            <input type="text" placeholder="What is the name of the card?" class="name-info-content">
+            </input>
+            <div class="card-name-info-line"></div>
+          </div>
+          <div class="explonation-info">
+            <div class="explanation2">Explanation</div>
+            <input type="text" placeholder="The card is about..." class="about-info-content">
+            <div class="explonation-info-line"></div>
+          </div>
+          <div class="finish-info">
+            <div class="finish-date2">Finish Date</div>
+            <input type="text" placeholder="When the card will be finished?" class="finish-info-content">
+            <div class="finish-info-line"></div>
+          </div>
+          <div class="tag-info">
+            <div class="tag2">Categories</div>
+            <input type="text" placeholder="Write tags with ','" class="tag-info-content">
+            <div class="tag-info-line"></div>
+          </div>
+          <a href="#"><div class="confirm-btn">
+            <div class="confirm">Confirm</div>
+          </div></a>
+          <a href="#"><div class="cancel-btn">
+            <div class="cancel">Cancel</div>
+          </div></a>
+        </div>        
+        <div class="credit">Developed by <em><b>ZETA</b></em> Group</div>
+      </div>
+</body>
+<script src="{{ url_for('static', filename='effects.js') }}"></script>
+<script src="{{ url_for('static', filename='card-info.js') }}"></script>
+</html>
