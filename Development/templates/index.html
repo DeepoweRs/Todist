@@ -50,7 +50,7 @@
           <div class="image-area-3"></div>
           <div class="text-3">eu feugiat pretium nibh ipsum consequat nisl vel</div>
         </div>
-        <a href="workspace.html"><div class="get-started-btn">
+        <a href="{{ url_for('workspace') }}"><div class="get-started-btn">
           <div class="get-started-for-free">Get started for FREE!</div>
         </div></a>
         <div class="nav-bg"></div>
@@ -87,25 +87,22 @@
           </span>
         </div>
         <div class="credit-year">2024</div>
-        <div class="logo">
-          <div class="logo-bg"></div>
-          <img class="logo2" src="logo1.png" />
+        <a href="{{ url_for('index') }}" ><div class="logo">
+          <img class="logo2" src="{{ url_for('static', filename='icons-logo/logo.png') }}" />
           <div class="todist">Todist</div>
-        </div>
+        </div></a>
         <div class="top-menu-2">
           <a href="#"><div class="contact">Contact</div></a>
           <a href="#"><div class="about-us">About us</div></a>
           <a href="#"><div class="solutions">Solutions</div></a>
           <a href="#"><div class="pricing">Pricing</div></a>
         </div>
-        <div class="log-in-btn">
-          <div class="log-in-btn-bg"></div>
+        <a href="#"><div class="log-in-btn">
           <div class="log-in">Log In</div>
-        </div>
-        <div class="sign-up-btn">
-          <div class="sign-up-btn-bg"></div>
+        </div></a>
+        <a href="#"><div class="sign-up-btn">
           <div class="sign-up">Sign Up</div>
-        </div>
+        </div></a>
       </div>
       
 </body>

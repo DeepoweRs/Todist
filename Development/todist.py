@@ -27,6 +27,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/workspace')
+def workspace():
+    return render_template('workspace.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
