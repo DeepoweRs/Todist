@@ -14,7 +14,7 @@
         </div>
         <div class="top-menu">
           <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
-          <a href="#"><div class="share-btn">
+          <a href="#"><div class="share-btn" id="fetchButton">
             <div class="share-bg"></div>
             <div class="share">Share</div>
           </div></a>
@@ -70,4 +70,5 @@
 </body>
 <script src="{{ url_for('static', filename='effects.js') }}"></script>
 <script src="{{ url_for('static', filename='card-info.js') }}"></script>
+<script src="{{ url_for('static', filename='receive_data.js') }}"></script>
 </html>

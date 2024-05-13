@@ -1,7 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
+from sqlalchemy import text
 import sqlite3
 
 app = Flask(__name__)
@@ -35,6 +34,26 @@ def workspace():
 @app.route('/logIn')
 def logIn():
     return render_template('logIn.html')
+
+@app.route('/get_task_info')
+def get_task_info():
+    
+    sql_query = text('''
+        SELECT Card_Name, Number_of_Completed_Task
+        FROM "Generell Card Info"
+        WHERE id IN (:id1, :id2, :id3)
+    ''')
+
+    card_info = db.session.execute(sql_query, {'id1': 3, 'id2': 4, 'id3': 5})
+
+    task_info = []
+    for row in card_info:
+        task_info.append({
+            'Card_Name': row.Card_Name,
+            'Number_of_Completed_Task': row.Number_of_Completed_Task
+        })
+
+    return jsonify(task_info)
 
 if __name__ == '__main__':
     app.run(debug=True)
