@@ -1,7 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from flask_admin import Admin
-from flask_admin.contrib.sqla import ModelView
+from sqlalchemy import text
 import sqlite3
 
 app = Flask(__name__)
@@ -10,7 +9,7 @@ db = SQLAlchemy(app)
 
 class GenerellCardInfo(db.Model):
     __tablename__ = 'Generell Card Info'  # Tablo adını belirtiyoruz, boşluklar için çift tırnak kullanmamız gerekecek
-    id = db.Column(db.Integer, primary_key=True)  # İsteğe bağlı: id sütunu oluşturmak için birincil anahtar ekleyebiliriz
+    CardId = db.Column(db.Integer, primary_key=True)  # İsteğe bağlı: id sütunu oluşturmak için birincil anahtar ekleyebiliriz
     Card_Name = db.Column(db.Text)
     Tags = db.Column(db.Text)
     Finish_Date = db.Column(db.Text)
@@ -35,6 +34,46 @@ def workspace():
 @app.route('/logIn')
 def logIn():
     return render_template('logIn.html')
+
+@app.route('/get_task_info')
+def get_task_info():
+
+    sql_query = text('''
+        SELECT Card_Name, Number_of_Completed_Task
+        FROM "Generell Card Info"
+        WHERE CardId IN (:id1, :id2, :id3)
+    ''')
+
+    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
+
+    task_info = []
+    for row in card_info:
+        task_info.append({
+            'Card_Name': row.Card_Name,
+            'Number_of_Completed_Task': row.Number_of_Completed_Task
+        })
+
+    return jsonify(task_info)
+
+@app.route('/createCard')
+def get_task_info():
+
+    sql_query = text('''
+        SELECT Card_Name, Number_of_Completed_Task
+        FROM "Generell Card Info"
+        WHERE CardId IN (:id1, :id2, :id3)
+    ''')
+
+    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
+
+    task_info = []
+    for row in card_info:
+        task_info.append({
+            'Card_Name': row.Card_Name,
+            'Number_of_Completed_Task': row.Number_of_Completed_Task
+        })
+
+    return jsonify(task_info)
 
 if __name__ == '__main__':
     app.run(debug=True)
