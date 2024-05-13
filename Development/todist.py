@@ -37,14 +37,34 @@ def logIn():
 
 @app.route('/get_task_info')
 def get_task_info():
-  
+
     sql_query = text('''
         SELECT Card_Name, Number_of_Completed_Task
         FROM "Generell Card Info"
         WHERE CardId IN (:id1, :id2, :id3)
     ''')
 
-    card_info = db.session.execute(sql_query, {'id1': 3, 'id2': 4, 'id3': 5})
+    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
+
+    task_info = []
+    for row in card_info:
+        task_info.append({
+            'Card_Name': row.Card_Name,
+            'Number_of_Completed_Task': row.Number_of_Completed_Task
+        })
+
+    return jsonify(task_info)
+
+@app.route('/createCard')
+def get_task_info():
+
+    sql_query = text('''
+        SELECT Card_Name, Number_of_Completed_Task
+        FROM "Generell Card Info"
+        WHERE CardId IN (:id1, :id2, :id3)
+    ''')
+
+    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
 
     task_info = []
     for row in card_info:
