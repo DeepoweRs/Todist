@@ -93,8 +93,8 @@ body {
   width: 44px;
   height: 40.76px;
   position: absolute;
-  left: 79px;
-  top: 27px;
+  left: 55px;
+  top: 21px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
@@ -262,10 +262,10 @@ body {
   border-color: #c8c8c8;
   border-width: 3px;
   width: 492px;
-  height: 232px;
+  height: 280px;
   position: absolute;
   left: 414px;
-  top: 450px;
+  top: 270px;
 }
 .card-info2 {
   color: #424242;
@@ -279,12 +279,7 @@ body {
   width: 93px;
   height: 20px;
 }
-.card-name {
-  width: 462px;
-  height: 36px;
-  position: static;
-}
-.card-name-info-bg {
+.card-name-info {
   background: #d9d9d9;
   border-radius: 30px;
   border-style: solid;
@@ -303,24 +298,22 @@ body {
   font-size: 14px;
   font-weight: 600;
   position: absolute;
-  left: 25px;
-  top: 60px;
+  left: 18px;
+  top: 11px;
 }
-.what-is-the-name-of-the-card {
+.name-info-content {
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
-  position: absolute;
-  left: 125px;
-  top: 55px;
+  left: 112px;
+  top: 5px;
   pointer-events: auto;
   position: absolute;
   height: 25px;
-  width: 226px;
+  width: 225px;
 }
 .card-name-info-line {
   border-style: solid;
@@ -329,17 +322,12 @@ body {
   width: 19px;
   height: 0px;
   position: absolute;
-  left: 117px;
-  top: 76px;
+  left: 103px;
+  top: 27px;
   transform-origin: 0 0;
   transform: rotate(-90deg) scale(1, 1);
 }
-.explanation {
-  width: 462px;
-  height: 36px;
-  position: static;
-}
-.explonation-info-bg {
+.explonation-info {
   background: #d9d9d9;
   border-radius: 30px;
   border-style: solid;
@@ -358,20 +346,21 @@ body {
   font-size: 14px;
   font-weight: 600;
   position: absolute;
-  left: 25px;
-  top: 106px;
+  left: 18px;
+  top: 11px;
 }
-.the-card-is-about {
+.about-info-content {
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
   position: absolute;
-  left: 125px;
-  top: 106px;
+  left: 112px;
+  top: 5px;
+  height: 25px;
+  width: 225px;
 }
 .explonation-info-line {
   border-style: solid;
@@ -380,17 +369,12 @@ body {
   width: 19px;
   height: 0px;
   position: absolute;
-  left: 117px;
-  top: 122px;
+  left: 103px;
+  top: 27px;
   transform-origin: 0 0;
   transform: rotate(-90deg) scale(1, 1);
 }
-.finish-date {
-  width: 462px;
-  height: 36px;
-  position: static;
-}
-.finish-info-bg {
+.finish-info {
   background: #d9d9d9;
   border-radius: 30px;
   border-style: solid;
@@ -409,20 +393,21 @@ body {
   font-size: 14px;
   font-weight: 600;
   position: absolute;
-  left: 25px;
-  top: 152px;
+  left: 18px;
+  top: 11px;
 }
-.when-the-card-will-be-finished {
+.finish-info-content {
   color: #424242;
   text-align: left;
   font-family: "Montserrat-Italic", sans-serif;
   font-size: 14px;
   font-weight: 400;
-  font-style: true;
   opacity: 0.5;
   position: absolute;
-  left: 125px;
-  top: 152px;
+  left: 112px;
+  top: 5px;
+  height: 25px;
+  width: 225px;
 }
 .finish-info-line {
   border-style: solid;
@@ -431,37 +416,103 @@ body {
   width: 19px;
   height: 0px;
   position: absolute;
-  left: 117px;
-  top: 168px;
+  left: 103px;
+  top: 27px;
   transform-origin: 0 0;
   transform: rotate(-90deg) scale(1, 1);
 }
-.add-tag {
-  width: 91px;
-  height: 28px;
-  position: static;
-}
-.add-tag-bg {
-  background: #e29090;
-  border-radius: 40px;
+.tag-info {
+  background: #d9d9d9;
+  border-radius: 30px;
   border-style: solid;
-  border-color: rgba(192, 192, 192, 0.8);
-  border-width: 1px;
-  width: 91px;
-  height: 28px;
+  border-color: #424242;
+  border-width: 0.5px;
+  width: 462px;
+  height: 36px;
   position: absolute;
-  left: 16px;
-  top: 190px;
+  left: 13px;
+  top: 187px;
 }
-.add-tag2 {
+.tag2 {
   color: #424242;
-  text-align: center;
+  text-align: left;
   font-family: "Montserrat-SemiBold", sans-serif;
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 600;
   position: absolute;
-  left: 40px;
-  top: 197px;
+  left: 18px;
+  top: 11px;
+}
+.tag-info-content {
+  color: #424242;
+  text-align: left;
+  font-family: "Montserrat-Italic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
+  position: absolute;
+  left: 112px;
+  top: 5px;
+  height: 25px;
+  width: 225px;
+}
+.tag-info-line {
+  border-style: solid;
+  border-color: #424242;
+  border-width: 1px 0 0 0;
+  width: 19px;
+  height: 0px;
+  position: absolute;
+  left: 103px;
+  top: 27px;
+  transform-origin: 0 0;
+  transform: rotate(-90deg) scale(1, 1);
+}
+.confirm-btn {
+  background: #378CE7;
+  border-radius: 5px;
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  transition: scale 0.3s ease;
+}
+.confirm-btn:hover {
+  scale: 105%;
+}
+.confirm {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  left: 24px;
+  top: 6px;
+}
+.cancel-btn {
+  background: #a65151;
+  border-radius: 5px;
+  width: 100px;
+  height: 28px;
+  position: absolute;
+  right: 130px;
+  bottom: 10px;
+  transition: scale 0.3s ease;
+}
+.cancel-btn:hover {
+  scale: 105%;
+}
+.cancel {
+  color: #ffffff;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  left: 29px;
+  top: 6px;
 }
 .credit {
   color: #424242;
