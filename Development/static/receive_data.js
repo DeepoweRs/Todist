@@ -1,3 +1,4 @@
+//Example get data from Flask
 function fetchData() {
     fetch('/get_task_info')
         .then(response => response.json())
@@ -10,3 +11,5 @@ function fetchData() {
 }
 
 document.getElementById('fetchButton').addEventListener('click', fetchData);
+
+//Send card data to Flask
