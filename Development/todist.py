@@ -9,7 +9,7 @@ db = SQLAlchemy(app)
 
 class GenerellCardInfo(db.Model):
     __tablename__ = 'Generell Card Info'  # Tablo adını belirtiyoruz, boşluklar için çift tırnak kullanmamız gerekecek
-    id = db.Column(db.Integer, primary_key=True)  # İsteğe bağlı: id sütunu oluşturmak için birincil anahtar ekleyebiliriz
+    CardId = db.Column(db.Integer, primary_key=True)  # İsteğe bağlı: id sütunu oluşturmak için birincil anahtar ekleyebiliriz
     Card_Name = db.Column(db.Text)
     Tags = db.Column(db.Text)
     Finish_Date = db.Column(db.Text)
@@ -37,11 +37,11 @@ def logIn():
 
 @app.route('/get_task_info')
 def get_task_info():
-    
+  
     sql_query = text('''
         SELECT Card_Name, Number_of_Completed_Task
         FROM "Generell Card Info"
-        WHERE id IN (:id1, :id2, :id3)
+        WHERE CardId IN (:id1, :id2, :id3)
     ''')
 
     card_info = db.session.execute(sql_query, {'id1': 3, 'id2': 4, 'id3': 5})
