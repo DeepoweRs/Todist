@@ -1,7 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
-import sqlite3
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/bedirhankurt/Desktop/Programming/Todist/Development/Database/CardInfo.sqlite'
@@ -55,25 +54,19 @@ def get_task_info():
 
     return jsonify(task_info)
 
-@app.route('/createCard')
-def get_task_info():
+@app.route('/createCard', methods=["POST"])
+def createCard():
+    data = request.get_json()
+    card_name = data['nameData']
+    tags = data['tagData']
+    finish_date = data['deuData']
 
-    sql_query = text('''
-        SELECT Card_Name, Number_of_Completed_Task
-        FROM "Generell Card Info"
-        WHERE CardId IN (:id1, :id2, :id3)
-    ''')
+    new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
+    db.session.add(new_card)
+    db.session.commit()
 
-    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
+    return jsonify({'message': 'Success'})
 
-    task_info = []
-    for row in card_info:
-        task_info.append({
-            'Card_Name': row.Card_Name,
-            'Number_of_Completed_Task': row.Number_of_Completed_Task
-        })
-
-    return jsonify(task_info)
 
 if __name__ == '__main__':
     app.run(debug=True)
