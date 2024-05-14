@@ -56,15 +56,16 @@ def get_task_info():
 
 @app.route('/createCard', methods=["POST"])
 def createCard():
-    card_name = request.form['nameData']
-    tags = request.form['tagData']
-    finish_date = request.form['deuData']
+    data = request.get_json()
+    card_name = data['nameData']
+    tags = data['tagData']
+    finish_date = data['deuData']
 
     new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
     db.session.add(new_card)
     db.session.commit()
 
-    return 'Successful!'
+    return jsonify({'message': 'Success'})
 
 
 if __name__ == '__main__':
