@@ -9,6 +9,7 @@ addIcon.addEventListener('click', function(){
 
 confirm.addEventListener("click", function(){
     cardInfo.style.display = "none"
+    
 })
 cancel.addEventListener("click", function(){
     cardInfo.style.display = "none"

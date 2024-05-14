@@ -16,7 +16,8 @@ document.getElementById('fetchButton').addEventListener('click', fetchData);
 function sendData() {
     var nameData = document.getElementById("nameData").value;
     var tagData = document.getElementById("tagData").value;
-    var deuData = document.getElementById("dueData").value;
+    var dueData = document.getElementById("dueData").value;
+    var expData = document.getElementById("expData").value;
 
     fetch('/createCard', {
         method: 'POST',
@@ -26,7 +27,8 @@ function sendData() {
         body: JSON.stringify({
             nameData: nameData,
             tagData: tagData,
-            deuData: deuData
+            dueData: dueData,
+            expData: expData
         })
     })
     .then(response => response.text())
