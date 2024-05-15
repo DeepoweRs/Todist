@@ -12,7 +12,6 @@ class GenerellCardInfo(db.Model):
     Card_Name = db.Column(db.Text)
     Tags = db.Column(db.Text)
     Finish_Date = db.Column(db.Text)
-    Card_Description = db.Column(db.Text)
     Situation = db.Column(db.Text)
     CardID = db.Column(db.Integer)
     Number_of_Task = db.Column(db.Integer)
@@ -59,7 +58,7 @@ def createCard():
     data = request.get_json()
     card_name = data['nameData']
     tags = data['tagData']
-    finish_date = data['deuData']
+    finish_date = data['dueData']
 
     new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
     db.session.add(new_card)
