@@ -13,13 +13,11 @@ confirm.addEventListener("click", function(){
     
     var newCard = `
         <div class="card">
-        <div class="card-bg"></div>
         <img class="line-10" src="line-100.svg" />
         <img class="line-9" src="line-90.svg" />
         <img class="line-8" src="line-80.svg" />
         <img class="line-7" src="line-70.svg" />
-        <div class="situation">
-        <div class="situation-bg"></div>
+        <div class="situation-bg">
         <div class="completed">Completed</div>
         </div>
         <div class="due">12 Mai - 12 Jun</div>
@@ -41,36 +39,9 @@ confirm.addEventListener("click", function(){
             <div class="ct-4">Ct. 4</div>
         </div>
         </div>
-        <div class="tasks">
-        <div class="task-5">
-            <div class="bg-5"></div>
-            <div class="icon-5"></div>
-            <div class="title-5">Task title</div>
-        </div>
-        <div class="task-4">
-            <div class="bg-4"></div>
-            <div class="icon-4"></div>
-            <div class="title-4">Task title</div>
-        </div>
-        <div class="task-3">
-            <div class="b-3"></div>
-            <div class="icon-3"></div>
-            <div class="title-3">Task title</div>
-        </div>
-        <div class="task-2">
-            <div class="bg-2"></div>
-            <div class="icon-2"></div>
-            <div class="title-2">Task title</div>
-        </div>
-        <div class="task-1">
-            <div class="bg-1"></div>
-            <div class="icon-1"></div>
-            <div class="title-1">Task title</div>
-        </div>
-        </div>
         <div class="card-title">Card Title</div>
-        <img class="delete" src="delete0.png" />
-        <img class="add" src="add0.png" />
+        <img class="add" src="icons-logo/addIcon.png"/>
+        <img class="delete" src="{{ url_for('static', filename='icons-logo/deleteIcon.png') }}" />
     </div>
     `;
     mainBg.insertAdjacentHTML('beforeend', newCard);
@@ -78,3 +49,31 @@ confirm.addEventListener("click", function(){
 cancel.addEventListener("click", function(){
     cardInfo.style.display = "none"
 })
+
+
+/*
+
+<div class="tasks">
+        <div class="bg-5">
+            <div class="icon-5"></div>
+            <div class="title-5">Task title</div>
+        </div>
+        <div class="bg-4">
+            <div class="icon-4"></div>
+            <div class="title-4">Task title</div>
+        </div>
+        <div class="b-3">
+            <div class="icon-3"></div>
+            <div class="title-3">Task title</div>
+        </div>
+        <div class="bg-2">
+            <div class="icon-2"></div>
+            <div class="title-2">Task title</div>
+        </div>
+        <div class="bg-1">
+            <div class="icon-1"></div>
+            <div class="title-1">Task title</div>
+        </div>
+        </div>
+        
+*/

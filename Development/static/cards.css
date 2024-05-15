@@ -1,22 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body {
+    margin: 0px;
+    padding: 0px;
+}
 .card,
 .card * {
   box-sizing: border-box;
 }
 .card {
-  position: relative;
-}
-.card-bg {
-  background: #f7f7f7;
+  background: #f0f0f0;
   border-radius: 10px;
   border-style: solid;
   border-color: #c8c8c8;
   border-width: 3px;
-  opacity: 0.699999988079071;
   width: 288px;
   height: 498px;
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 20px;
+  top: 15px;
 }
 .line-10 {
   width: 249px;
@@ -66,21 +67,22 @@
   position: absolute;
   left: 19px;
   top: 444px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .completed {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   position: absolute;
-  left: 109px;
-  top: 457px;
 }
 .due {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 600;
   position: absolute;
@@ -112,7 +114,7 @@
 .category-1 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 7px;
   font-weight: 600;
   position: absolute;
@@ -139,7 +141,7 @@
 .category-2 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 7px;
   font-weight: 600;
   position: absolute;
@@ -166,7 +168,7 @@
 .category-3 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 7px;
   font-weight: 600;
   position: absolute;
@@ -193,7 +195,7 @@
 .ct-4 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 7px;
   font-weight: 600;
   position: absolute;
@@ -237,7 +239,7 @@
 .title-5 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   position: absolute;
@@ -276,7 +278,7 @@
 .title-4 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   position: absolute;
@@ -315,7 +317,7 @@
 .title-3 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   position: absolute;
@@ -354,7 +356,7 @@
 .title-2 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   position: absolute;
@@ -393,7 +395,7 @@
 .title-1 {
   color: #424242;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 600;
   position: absolute;
@@ -403,7 +405,7 @@
 .card-title {
   color: #424242;
   text-align: left;
-  font-family: "Montserrat-SemiBold", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 600;
   position: absolute;

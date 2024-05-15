@@ -12,7 +12,6 @@ class GenerellCardInfo(db.Model):
     Card_Name = db.Column(db.Text)
     Tags = db.Column(db.Text)
     Finish_Date = db.Column(db.Text)
-    Card_Description = db.Column(db.Text)
     Situation = db.Column(db.Text)
     CardID = db.Column(db.Integer)
     Number_of_Task = db.Column(db.Integer)
