@@ -52,11 +52,6 @@ body {
   overflow: visible;
 }
 .situation {
-  width: 249px;
-  height: 42px;
-  position: static;
-}
-.situation-bg {
   background: #91d886;
   border-radius: 5px;
   border-style: solid;
@@ -65,11 +60,15 @@ body {
   width: 249px;
   height: 42px;
   position: absolute;
-  left: 19px;
-  top: 444px;
+  left: 15px;
+  bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: box-shadow 0.3s ease;
+}
+.situation:hover{
+    box-shadow: 0px 0px 10px 2px rgba(66, 66, 66, 0.3);
 }
 .completed {
   color: #424242;
@@ -419,12 +418,20 @@ body {
   left: 240px;
   top: 21px;
   object-fit: cover;
+  transition: scale 0.2s ease;
+}
+.delete:hover{
+    scale: 110%;
 }
 .add {
   width: 16px;
   height: 16px;
   position: absolute;
   left: 213px;
-  top: 22px;
+  top: 21px;
   object-fit: cover;
+  transition: scale 0.2s ease;
+}
+.add:hover{
+    scale: 110%;
 }

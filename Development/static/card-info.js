@@ -17,9 +17,9 @@ confirm.addEventListener("click", function(){
         <img class="line-9" src="line-90.svg" />
         <img class="line-8" src="line-80.svg" />
         <img class="line-7" src="line-70.svg" />
-        <div class="situation-bg">
+        <a href="#"><div class="situation">
         <div class="completed">Completed</div>
-        </div>
+        </div></a>
         <div class="due">12 Mai - 12 Jun</div>
         <div class="categories">
         <div class="group-52">
@@ -40,8 +40,8 @@ confirm.addEventListener("click", function(){
         </div>
         </div>
         <div class="card-title">Card Title</div>
-        <img class="add" src="icons-logo/addIcon.png"/>
-        <img class="delete" src="{{ url_for('static', filename='icons-logo/deleteIcon.png') }}" />
+        <a href="#"><img class="add" src="/static/icons-logo/addIcon.png"/></a>
+        <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" /></a>
     </div>
     `;
     mainBg.insertAdjacentHTML('beforeend', newCard);

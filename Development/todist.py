@@ -57,11 +57,10 @@ def get_task_info():
 def createCard():
     data = request.get_json()
     card_name = data['nameData']
-    exp = data['expData']
     tags = data['tagData']
     finish_date = data['dueData']
 
-    new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date, Card_Description=exp,)
+    new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
     db.session.add(new_card)
     db.session.commit()
 
