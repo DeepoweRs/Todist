@@ -8,12 +8,12 @@ shareBtn.addEventListener('mouseout', function(){
     shareBtnBg.style = ''
 })
 
-const changeBgBtn = document.getElementsByClassName('changebg-btn')[0]
-const changeBgBg = document.getElementsByClassName('changebg-bg')[0]
-const changeBgText = document.getElementsByClassName('changebg-text')[0]
+const changeBgBtn = document.getElementsByClassName('change-bg')[0]
+const changeBgBg = document.getElementsByClassName('change-bg')[0]
+const changeBgText = document.getElementsByClassName('change-bg-text')[0]
 
 changeBgBtn.addEventListener('mouseover', function(){
-    changeBgBg.style = "background: linear-gradient(92.94deg,rgba(55, 140, 231, 1) 0%,rgba(83, 86, 255, 1) 99.42358732223511%);"
+    changeBgBg.style = "background: #424242;"
     changeBgText.style = "-webkit-text-fill-color: #ffffff;"
 })
 changeBgBtn.addEventListener('mouseout', function(){
