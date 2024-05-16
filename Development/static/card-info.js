@@ -15,14 +15,15 @@ confirm.addEventListener("click", function(){
 
     // Bekleme süresinden sonra işlemi gerçekleştiren kod
     setTimeout(function() {
-        fetch('/getTitleAndDue')
+        fetch('/getInfo')
             .then(response => response.json())
             .then(data => {
                 var CardTitle = data.card_title;
                 var DueDate = data.due_date;
+                var Id = data.id;
 
                 var newCard = `
-                    <div class="card">
+                    <div class="card" id='${Id}'>
                     <img class="line-10" src="line-100.svg" />
                     <img class="line-9" src="line-90.svg" />
                     <img class="line-8" src="line-80.svg" />
@@ -51,7 +52,7 @@ confirm.addEventListener("click", function(){
                     </div>
                     <div class="card-title">${CardTitle}</div>
                     <a href="#"><img class="add" src="/static/icons-logo/addIcon.png"/></a>
-                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" /></a>
+                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" id="delete-${ Id }" /></a>
                 </div>
                 `;
                 mainBg.insertAdjacentHTML('beforeend', newCard);
