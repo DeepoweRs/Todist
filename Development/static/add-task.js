@@ -1,0 +1,1 @@
+const addIcon = document.querySelectorAll('add')

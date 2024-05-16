@@ -12,30 +12,28 @@
     <div class="workspace">
         <div class="main-bg">
             <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
+            <a href="#">
+              <div class="help-btn">
+              <div class="help">Help</div>
+            </div>
+            </a>
         </div>
         <div class="top-menu">
           <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
-          <a href="#"><div class="share-btn" id="fetchButton">
-            <div class="share-bg"></div>
+          <a href="#">
+            <div class="share-btn">
             <div class="share">Share</div>
           </div></a>
-          <label for="fileInput" class="changebg-btn">
-            <div class="changebg-bg"></div>
-            <div class="changebg-text">Change BG</div>
-        </label>
+          <a href="#"><div class="change-bg">
+            <div class="change-bg-text">Change BG</div>
+          </div></a>
         <input type="file" id="fileInput" class="fileInput" onchange="changeBg(this)">        
           <a href="#"><div class="top-rec"></div></a>
           <a href="#"><div class="board">Board</div></a>
           <a href="#"><div class="timeline">Timeline</div></a>
           <a href="#"><div class="calendar">Calendar</div></a>
           <a href="#"><div class="table">Table</div></a>
-          <a href="#"><div class="notes">Notes</div></a>
         </div>
-        <a href="#"><div class="help-btn">
-            <div class="help-btn-bg"></div>
-            <div class="help-btn-glow"></div>
-            <div class="help">Help</div>
-        </div></a>
         <div class="card-info">
           <div class="card-info2">Card Info</div>
           <div class="card-name-info">
@@ -46,7 +44,7 @@
           </div>
           <div class="finish-info">
             <div class="finish-date2">Finish Date</div>
-            <input name="deuData" type="text" placeholder="When the card will be finished?" id="dueData" class="finish-info-content">
+            <input name="deuData" type="text" placeholder="When is the due date?" id="dueData" class="finish-info-content">
             <div class="finish-info-line"></div>
           </div>
           <div class="tag-info">
@@ -67,4 +65,5 @@
 <script src="{{ url_for('static', filename='effects.js') }}"></script>
 <script src="{{ url_for('static', filename='card-info.js') }}"></script>
 <script src="{{ url_for('static', filename='receive_data.js') }}"></script>
+<script src="{{ url_for('static', filename='delete-card.js') }}"></script>
 </html>

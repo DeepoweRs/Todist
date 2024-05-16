@@ -31,50 +31,30 @@ body {
   box-shadow: 0px 4px 46.3px 3px rgba(0, 0, 0, 0.25);
 }
 .help-btn {
-  width: 100px;
-  height: 39.83px;
+  background: #a1abe3;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #424242;
+  border-width: 1px;
+  width: 91px;
+  height: 38px;
   position: absolute;
-  left: 1278px;
-  top: 626px;
-  transition: scale 0.3s ease;
+  bottom: 20px;
+  right: 20px;
+  transition: scale 0.2s ease;
+}
+.help {
+  color: #424242;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  left: 26px;
+  top: 9px;
 }
 .help-btn:hover {
     scale: 105%;
-}
-.help-btn-bg {
-  background: linear-gradient(
-    92.94deg,
-    rgba(55, 140, 231, 1) 0%,
-    rgba(83, 86, 255, 1) 99.42358732223511%
-  );
-  border-radius: 10px;
-  width: 100px;
-  height: 39.83px;
-  position: absolute;
-}
-.help-btn-glow {
-  background: linear-gradient(
-    92.94deg,
-    rgba(55, 140, 231, 1) 0%,
-    rgba(83, 86, 255, 1) 100%
-  );
-  border-radius: 10px;
-  width: 100px;
-  height: 39.83px;
-  position: absolute;
-  filter: blur(10.65px);
-}
-.help {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  position: absolute;
-  width: 43px;
-  height: 20.38px;
-  padding-top: 8px;
-  padding-left: 28px;
 }
 .top-menu {
   background: #e1e1e1;
@@ -98,80 +78,55 @@ body {
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
-.share-btn {
-  width: 100px;
-  height: 39.83px;
+.share-btn{
+  background: #e6d0a3;
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #424242;
+  border-width: 1px;
+  width: 91px;
+  height: 38px;
   position: absolute;
-  left: 1215px;
-  top: 22px;
+  right: 30px;
+  top: 20px;
+  transition: box-shadow 0.2s ease;
 }
-.share-bg {
-  background: linear-gradient(
-    92.94deg,
-    rgba(55, 140, 231, 1) 0%,
-    rgba(83, 86, 255, 1) 99.42358732223511%
-  );
-  transition: box-shadow 0.3s ease;
-  border-radius: 10px;
-  width: 100px;
-  height: 39.83px;
-  position: absolute;
+.share-btn:hover{
+  box-shadow: 0px 0px 15px 5px rgba(66, 66, 66, 0.3);
 }
 .share {
-  color: #ffffff;
+  color: #424242;
   text-align: left;
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   position: absolute;
-  padding-top: 10px;
-  padding-left: 25px;
-  width: 47px;
-  height: 18.53px;
+  left: 22px;
+  top: 9px;
 }
 .fileInput {
     display: none;
 }
-.changebg-btn {
-    cursor: pointer;
-    width: 119px;
-    height: 39.83px;
-    position: absolute;
-    left: 1085px;
-    top: 22px;
+.change-bg {
+  border-radius: 4px;
+  border-style: solid;
+  border-color: #424242;
+  border-width: 1px;
+  width: 117px;
+  height: 38px;
+  position: absolute;
+  right: 140px;
+  top: 20px;
 }
-.changebg-bg {
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(
-        90deg,
-        rgba(55, 140, 231, 1) 0%,
-        rgba(83, 86, 255, 1) 100%
-    );
-    border-image-slice: 1;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-.changebg-text {
-    background: linear-gradient(
-        90deg,
-        rgba(55, 140, 231, 1) 0%,
-        rgba(83, 86, 255, 1) 100%
-    );
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: left;
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    position: absolute;
-    margin-top: 11px;
-    margin-left: 19px;
-    width: 81px;
-    height: 18px;
+.change-bg-text {
+  color: #424242;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  position: absolute;
+  left: 12px;
+  top: 9px;
 }
 .top-rec {
   background: #d2d2d2;

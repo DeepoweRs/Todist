@@ -66,12 +66,12 @@ def createCard():
 
     return jsonify({'message': 'Success'})
 
-@app.route('/getTitleAndDue')
+@app.route('/getInfo')
 def getCardTitle():
     card = GenerellCardInfo.query.order_by(GenerellCardInfo.CardId.desc()).first()
 
     if card:
-        return jsonify({'card_title': card.Card_Name, 'due_date': card.Finish_Date})
+        return jsonify({'card_title': card.Card_Name, 'due_date': card.Finish_Date, 'id': card.CardID})
     else:
         return jsonify({'card_title': 'No card available', 'due_date': 'No card available'})
 

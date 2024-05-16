@@ -1,3 +1,5 @@
+/* cards.css */
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
     margin: 0px;
@@ -65,7 +67,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 .situation:hover{
     box-shadow: 0px 0px 10px 2px rgba(66, 66, 66, 0.3);

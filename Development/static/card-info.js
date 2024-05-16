@@ -15,14 +15,15 @@ confirm.addEventListener("click", function(){
 
     // Bekleme süresinden sonra işlemi gerçekleştiren kod
     setTimeout(function() {
-        fetch('/getTitleAndDue')
+        fetch('/getInfo')
             .then(response => response.json())
             .then(data => {
                 var CardTitle = data.card_title;
                 var DueDate = data.due_date;
+                var Id = data.id;
 
                 var newCard = `
-                    <div class="card">
+                    <div class="card" id='${Id}'>
                     <img class="line-10" src="line-100.svg" />
                     <img class="line-9" src="line-90.svg" />
                     <img class="line-8" src="line-80.svg" />
@@ -50,8 +51,8 @@ confirm.addEventListener("click", function(){
                     </div>
                     </div>
                     <div class="card-title">${CardTitle}</div>
-                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png"/></a>
-                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" /></a>
+                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png" id="add-${ Id }"/></a>
+                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" id="delete-${ Id }" /></a>
                 </div>
                 `;
                 mainBg.insertAdjacentHTML('beforeend', newCard);
@@ -62,31 +63,3 @@ confirm.addEventListener("click", function(){
 cancel.addEventListener("click", function(){
     cardInfo.style.display = "none"
 })
-
-
-/*
-
-<div class="tasks">
-        <div class="bg-5">
-            <div class="icon-5"></div>
-            <div class="title-5">Task title</div>
-        </div>
-        <div class="bg-4">
-            <div class="icon-4"></div>
-            <div class="title-4">Task title</div>
-        </div>
-        <div class="b-3">
-            <div class="icon-3"></div>
-            <div class="title-3">Task title</div>
-        </div>
-        <div class="bg-2">
-            <div class="icon-2"></div>
-            <div class="title-2">Task title</div>
-        </div>
-        <div class="bg-1">
-            <div class="icon-1"></div>
-            <div class="title-1">Task title</div>
-        </div>
-        </div>
-        
-*/
