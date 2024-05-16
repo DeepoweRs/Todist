@@ -51,7 +51,7 @@ confirm.addEventListener("click", function(){
                     </div>
                     </div>
                     <div class="card-title">${CardTitle}</div>
-                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png"/></a>
+                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png" id="add-${ Id }"/></a>
                     <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" id="delete-${ Id }" /></a>
                 </div>
                 `;
@@ -63,31 +63,3 @@ confirm.addEventListener("click", function(){
 cancel.addEventListener("click", function(){
     cardInfo.style.display = "none"
 })
-
-
-/*
-
-<div class="tasks">
-        <div class="bg-5">
-            <div class="icon-5"></div>
-            <div class="title-5">Task title</div>
-        </div>
-        <div class="bg-4">
-            <div class="icon-4"></div>
-            <div class="title-4">Task title</div>
-        </div>
-        <div class="b-3">
-            <div class="icon-3"></div>
-            <div class="title-3">Task title</div>
-        </div>
-        <div class="bg-2">
-            <div class="icon-2"></div>
-            <div class="title-2">Task title</div>
-        </div>
-        <div class="bg-1">
-            <div class="icon-1"></div>
-            <div class="title-1">Task title</div>
-        </div>
-        </div>
-        
-*/
