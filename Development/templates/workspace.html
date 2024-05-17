@@ -6,6 +6,8 @@
     <title>Todist</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='workspace.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cardInfo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='taskInfo.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icons-logo/logo_shortcut.png') }}">
 </head>
 <body>
@@ -58,7 +60,22 @@
           <a href="#"><div class="cancel-btn">
             <div class="cancel">Cancel</div>
           </div></a>
-        </div>        
+        </div>
+          <div class="task-info">
+            <div class="task-info2">Task Info</div>
+            <div class="task-name-info">
+              <div class="task-name2">Task Name</div>
+              <input name="taskNameData" type="text" placeholder="What is the name of the task?" id="taskNameData" class="task-name-info-content">
+              </input>
+              <div class="task-name-info-line"></div>
+            </div>
+            <a href="#"><div class="task-confirm-btn">
+              <div class="task-confirm">Confirm</div>
+            </div></a>
+            <a href="#"><div class="task-cancel-btn">
+              <div class="task-cancel">Cancel</div>
+            </div></a>
+            </div>
         <div class="credit">Developed by <em><b>ZETA</b></em> Group</div>
       </div>
 </body>
@@ -66,4 +83,5 @@
 <script src="{{ url_for('static', filename='card-info.js') }}"></script>
 <script src="{{ url_for('static', filename='receive_data.js') }}"></script>
 <script src="{{ url_for('static', filename='delete-card.js') }}"></script>
+<script src="{{ url_for('static', filename='add-task.js') }}"></script>
 </html>

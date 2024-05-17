@@ -7,10 +7,14 @@ confirm.addEventListener('click', function() {
             icon.addEventListener('click', function() {
                 var cardId = this.id.split('-')[1];
                 var card = document.getElementById(cardId);
+
+                var taskInfo = document.getElementsByClassName('task-info')[0];
+                taskInfo.style.display = 'none';
+
                 if (card) { 
                     card.remove();
                 } else {
-                    console.error("Kart bulunamadı:", cardId);
+                    console.error("No card like:", cardId);
                 }
             });
         });

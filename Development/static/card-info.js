@@ -2,6 +2,7 @@ const addIcon = document.getElementsByClassName('addIcon')[0]
 const cardInfo = document.getElementsByClassName('card-info')[0]
 const confirm = document.getElementsByClassName('confirm-btn')[0]
 const cancel = document.getElementsByClassName('cancel-btn')[0]
+var mainBg = document.getElementsByClassName("main-bg")[0];
 
 addIcon.addEventListener('click', function(){
     cardInfo.style.display = 'block'
@@ -9,7 +10,6 @@ addIcon.addEventListener('click', function(){
 
 confirm.addEventListener("click", function(){
     cardInfo.style.display = "none"
-    var mainBg = document.getElementsByClassName("main-bg")[0];
     
     var waitTime = 500; // Örneğin, 500 ms bekleyelim
 
