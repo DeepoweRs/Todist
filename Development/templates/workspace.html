@@ -13,12 +13,12 @@
 <body>
     <div class="workspace">
         <div class="main-bg">
-            <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
-            <a href="#">
-              <div class="help-btn">
-              <div class="help">Help</div>
-            </div>
-            </a>
+          <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
+          <a href="#">
+            <div class="help-btn">
+            <div class="help">Help</div>
+          </div>
+          </a>
         </div>
         <div class="top-menu">
           <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
@@ -51,7 +51,7 @@
           </div>
           <div class="tag-info">
             <div class="tag2">Categories</div>
-            <input name="tagData" type="text" placeholder="Write tags with ','" id="tagData" class="tag-info-content">
+            <input name="tagData" type="text" placeholder="Split tags with ','" id="tagData" class="tag-info-content">
             <div class="tag-info-line"></div>
           </div>
           <a href="#"><div class="confirm-btn">
@@ -61,27 +61,27 @@
             <div class="cancel">Cancel</div>
           </div></a>
         </div>
-          <div class="task-info">
-            <div class="task-info2">Task Info</div>
-            <div class="task-name-info">
-              <div class="task-name2">Task Name</div>
-              <input name="taskNameData" type="text" placeholder="What is the name of the task?" id="taskNameData" class="task-name-info-content">
-              </input>
-              <div class="task-name-info-line"></div>
-            </div>
-            <a href="#"><div class="task-confirm-btn">
-              <div class="task-confirm">Confirm</div>
-            </div></a>
-            <a href="#"><div class="task-cancel-btn">
-              <div class="task-cancel">Cancel</div>
-            </div></a>
-            </div>
+        <div class="task-info">
+          <div class="task-info2">Task Info</div>
+          <div class="task-name-info">
+            <div class="task-name2">Task Name</div>
+            <input name="taskNameData" type="text" placeholder="What is the name of the task?" id="taskNameData" class="task-name-info-content">
+            </input>
+            <div class="task-name-info-line"></div>
+          </div>
+          <a href="#"><div class="task-confirm-btn">
+            <div class="task-confirm">Confirm</div>
+          </div></a>
+          <a href="#"><div class="task-cancel-btn">
+            <div class="task-cancel">Cancel</div>
+          </div></a>
+        </div>
         <div class="credit">Developed by <em><b>ZETA</b></em> Group</div>
-      </div>
+    </div>
 </body>
 <script src="{{ url_for('static', filename='effects.js') }}"></script>
 <script src="{{ url_for('static', filename='card-info.js') }}"></script>
-<script src="{{ url_for('static', filename='receive_data.js') }}"></script>
+<script src="{{ url_for('static', filename='create-card-task.js') }}"></script>
 <script src="{{ url_for('static', filename='delete-card.js') }}"></script>
 <script src="{{ url_for('static', filename='add-task.js') }}"></script>
 </html>

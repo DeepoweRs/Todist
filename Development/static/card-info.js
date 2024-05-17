@@ -1,29 +1,31 @@
 const addIcon = document.getElementsByClassName('addIcon')[0]
 const cardInfo = document.getElementsByClassName('card-info')[0]
-const confirm = document.getElementsByClassName('confirm-btn')[0]
-const cancel = document.getElementsByClassName('cancel-btn')[0]
-var mainBg = document.getElementsByClassName("main-bg")[0];
+const taskInfo = document.getElementsByClassName('task-info')[0]
+const cardConfirm = document.getElementsByClassName('confirm-btn')[0]
+const cardCancel = document.getElementsByClassName('cancel-btn')[0]
+const taskConfirm = document.getElementsByClassName('task-confirm-btn')[0]
+const taskCancel = document.getElementsByClassName('task-cancel-btn')[0]
+const mainBg = document.getElementsByClassName("main-bg")[0];
 
 addIcon.addEventListener('click', function(){
     cardInfo.style.display = 'block'
 })
 
-confirm.addEventListener("click", function(){
+cardConfirm.addEventListener("click", function(){
     cardInfo.style.display = "none"
     
-    var waitTime = 500; // Örneğin, 500 ms bekleyelim
+    var waitTime = 500;
 
-    // Bekleme süresinden sonra işlemi gerçekleştiren kod
     setTimeout(function() {
-        fetch('/getInfo')
+        fetch('/getCardInfo')
             .then(response => response.json())
             .then(data => {
                 var CardTitle = data.card_title;
                 var DueDate = data.due_date;
-                var Id = data.id;
+                var CardId = data.id;
 
                 var newCard = `
-                    <div class="card" id='${Id}'>
+                    <div class="card" id='${CardId}'>
                     <img class="line-10" src="line-100.svg" />
                     <img class="line-9" src="line-90.svg" />
                     <img class="line-8" src="line-80.svg" />
@@ -60,6 +62,33 @@ confirm.addEventListener("click", function(){
         }, waitTime);
 });
 
-cancel.addEventListener("click", function(){
+cardCancel.addEventListener("click", function(){
+    cardInfo.style.display = "none"
+})
+
+taskConfirm.addEventListener("click", function(){
+    taskInfo.style.display = "none"
+    
+    var waitTime = 500;
+
+    setTimeout(function() {
+        fetch('/getTaskInfo')
+            .then(response => response.json())
+            .then(data => {
+                var TaskTitle = data.task_title;
+                var TaskId = data.id;
+
+                var newTask = `
+                <div class="task" id="${TaskId}">
+                <div class="icon"></div>
+                <div class="title">${TaskTitle}</div>
+                </div>
+                `;
+                mainBg.insertAdjacentHTML('beforeend', newTask);
+            })
+        }, waitTime);
+});
+
+taskCancel.addEventListener("click", function(){
     cardInfo.style.display = "none"
 })

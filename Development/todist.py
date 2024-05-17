@@ -7,8 +7,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////Users/bedirhankurt/Desktop/P
 db = SQLAlchemy(app)
 
 class GenerellCardInfo(db.Model):
-    __tablename__ = 'Generell Card Info'  # Tablo adını belirtiyoruz, boşluklar için çift tırnak kullanmamız gerekecek
-    CardId = db.Column(db.Integer, primary_key=True)  # İsteğe bağlı: id sütunu oluşturmak için birincil anahtar ekleyebiliriz
+    __tablename__ = 'Generell Card Info' 
+    CardId = db.Column(db.Integer, primary_key=True)
     Card_Name = db.Column(db.Text)
     Tags = db.Column(db.Text)
     Finish_Date = db.Column(db.Text)
@@ -20,6 +20,13 @@ class GenerellCardInfo(db.Model):
 
     def __repr__(self):
         return f'<GenerellCardInfo Card_Name="{self.Card_Name}" Tags="{self.Tags}" Finish_Date="{self.Finish_Date}">'
+    
+class TaskInfo(db.Model):
+    __tablename__ = 'Task Info' 
+    TaskId = db.Column(db.Integer, primary_key=True)
+    Task_Name = db.Column(db.Text)
+    Task_Description = db.Column(db.Text)
+    Task_Status = db.Column(db.Text)
     
 @app.route('/')
 def index():
@@ -33,32 +40,12 @@ def workspace():
 def logIn():
     return render_template('logIn.html')
 
-@app.route('/get_task_info')
-def get_task_info():
-
-    sql_query = text('''
-        SELECT Card_Name, Number_of_Completed_Task
-        FROM "Generell Card Info"
-        WHERE CardId IN (:id1, :id2, :id3)
-    ''')
-
-    card_info = db.session.execute(sql_query, {'id1': 1, 'id2': 2, 'id3': 3})
-
-    task_info = []
-    for row in card_info:
-        task_info.append({
-            'Card_Name': row.Card_Name,
-            'Number_of_Completed_Task': row.Number_of_Completed_Task
-        })
-
-    return jsonify(task_info)
-
 @app.route('/createCard', methods=["POST"])
 def createCard():
-    data = request.get_json()
-    card_name = data['nameData']
-    tags = data['tagData']
-    finish_date = data['dueData']
+    cardData = request.get_json()
+    card_name = cardData['cardNameData']
+    tags = cardData['tagData']
+    finish_date = cardData['dueData']
 
     new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
     db.session.add(new_card)
@@ -66,14 +53,35 @@ def createCard():
 
     return jsonify({'message': 'Success'})
 
-@app.route('/getInfo')
-def getCardTitle():
+@app.route('/createTask', methods=["POST"])
+def createTask():
+    taskData = request.get_json()
+    task_name = taskData['taskNameData']
+
+
+    new_task = TaskInfo(Task_Name=task_name)
+    db.session.add(new_task)
+    db.session.commit()
+
+    return jsonify({'message': 'Success'})
+
+@app.route('/getCardInfo')
+def getCardInfo():
     card = GenerellCardInfo.query.order_by(GenerellCardInfo.CardId.desc()).first()
 
     if card:
         return jsonify({'card_title': card.Card_Name, 'due_date': card.Finish_Date, 'id': card.CardID})
     else:
         return jsonify({'card_title': 'No card available', 'due_date': 'No card available'})
+    
+@app.route('/getTaskInfo')
+def getTaskInfo():
+    task = TaskInfo.query.order_by(TaskInfo.TaskId.desc()).first()
+
+    if task:
+        return jsonify({'task_title': task.Task_Name, 'id': task.TaskId})
+    else:
+        return jsonify({'card_title': 'No card available'})
 
 
 if __name__ == '__main__':
