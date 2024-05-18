@@ -24,7 +24,7 @@ function sendCardData() {
     });
 }
 
-document.getElementsByClassName('confirm-btn')[0].addEventListener('click', sendCardData);
+cardConfirm.addEventListener('click', sendCardData);
 
 function sendTaskData() {
     var taskNameData = document.getElementById("taskNameData").value;
@@ -47,4 +47,4 @@ function sendTaskData() {
     });
 }
 
-document.getElementsByClassName('task-confirm-btn')[0].addEventListener('click', sendTaskData);
+taskConfirm.addEventListener('click', sendTaskData);

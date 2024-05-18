@@ -53,8 +53,8 @@ cardConfirm.addEventListener("click", function(){
                     </div>
                     </div>
                     <div class="card-title">${CardTitle}</div>
-                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png" id="add-${ Id }"/></a>
-                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" id="delete-${ Id }" /></a>
+                    <a href="#"><img class="add" src="/static/icons-logo/addIcon.png" id="add-${ CardId }"/></a>
+                    <a href="#"><img class="delete" src="/static/icons-logo/deleteIcon.png" id="delete-${ CardId }" /></a>
                 </div>
                 `;
                 mainBg.insertAdjacentHTML('beforeend', newCard);
@@ -75,6 +75,7 @@ taskConfirm.addEventListener("click", function(){
         fetch('/getTaskInfo')
             .then(response => response.json())
             .then(data => {
+                var card = document.getElementById('${}')[0]
                 var TaskTitle = data.task_title;
                 var TaskId = data.id;
 
@@ -84,7 +85,7 @@ taskConfirm.addEventListener("click", function(){
                 <div class="title">${TaskTitle}</div>
                 </div>
                 `;
-                mainBg.insertAdjacentHTML('beforeend', newTask);
+                card.insertAdjacentHTML('beforeend', newTask);
             })
         }, waitTime);
 });

@@ -1,4 +1,4 @@
-confirm.addEventListener('click', function(){
+cardConfirm.addEventListener('click', function(){
     waitTime = 800
 
     setTimeout(function(){

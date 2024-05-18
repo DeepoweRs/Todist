@@ -1,4 +1,4 @@
-confirm.addEventListener('click', function() {
+cardConfirm.addEventListener('click', function() {
     var waitTime = 800;
 
     setTimeout(function() {
@@ -8,8 +8,8 @@ confirm.addEventListener('click', function() {
                 var cardId = this.id.split('-')[1];
                 var card = document.getElementById(cardId);
 
-                var taskInfo = document.getElementsByClassName('task-info')[0];
-                taskInfo.style.display = 'none';
+                var cardInfo = document.getElementsByClassName('card-info')[0];
+                cardInfo.style.display = 'none';
 
                 if (card) { 
                     card.remove();
