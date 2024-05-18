@@ -75,7 +75,14 @@ taskConfirm.addEventListener("click", function(){
         fetch('/getTaskInfo')
             .then(response => response.json())
             .then(data => {
-                var card = document.getElementById('${}')[0]
+
+                var cardList = document.querySelectorAll('card')
+
+/*
+                for (each in cardList){
+                    if(card.)
+                }
+*/
                 var TaskTitle = data.task_title;
                 var TaskId = data.id;
 

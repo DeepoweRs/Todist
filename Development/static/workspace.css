@@ -31,6 +31,7 @@ body {
   box-shadow: 0px 4px 46.3px 3px rgba(0, 0, 0, 0.25);
 }
 .help-btn {
+  flex: none;
   background: #a1abe3;
   border-radius: 4px;
   border-style: solid;
@@ -201,6 +202,7 @@ body {
   height: 20.38px;
 }
 .addIcon{
+  flex: none;
   position: absolute;
   scale: 50%;
   left: 528px;

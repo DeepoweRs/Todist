@@ -10,6 +10,7 @@ body {
   box-sizing: border-box;
 }
 .card {
+  flex: 1;
   background: #f0f0f0;
   border-radius: 10px;
   border-style: solid;
