@@ -100,8 +100,8 @@ taskConfirm.addEventListener("click", function(){
 
                 var newTask = `
                 <div class="task" id="task-${TaskId}">
-                <img class="icon" id='status-${taskStatus}' src='/static/icons-logo/taskCompletedIcon.png'>
-                <img class="icon" id='status-${taskStatus}' src='/static/icons-logo/taskProgressIcon.png'>
+                <a href='#'><img class="completedIcon" id='status-${taskStatus}' src='/static/icons-logo/taskCompletedIcon.png'></a>
+                <a href='#'><img class="progressIcon" id='status-${taskStatus}' src='/static/icons-logo/taskProgressIcon.png'></a>
                 <div class="title">${TaskTitle}</div>
                 </div>
                 `;
@@ -122,6 +122,39 @@ taskConfirm.addEventListener("click", function(){
                 } else if (taskCount.length == 5) {
                     task.style.top = '290px';
                 }
+
+                const progressIcon = document.getElementById(`task-${TaskId}`).getElementsByClassName('progressIcon')[0];
+                const completedIcon = document.getElementById(`task-${TaskId}`).getElementsByClassName('completedIcon')[0];
+
+                progressIcon.addEventListener('click', function(){
+                    progressIcon.style.display = 'none'
+                    completedIcon.style.display = 'block'
+                    fetch('changeTaskStatus', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            taskStatus: 1,
+                            TaskId: TaskId   
+                        })
+                    });
+                })
+                completedIcon.addEventListener('click', function(){
+                    completedIcon.style.display = 'none'
+                    progressIcon.style.display = 'block'
+                    fetch('changeTaskStatus', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            taskStatus: 0,
+                            TaskId: TaskId   
+                        })
+                    });
+                })
+
             })
         }, waitTime);
 });

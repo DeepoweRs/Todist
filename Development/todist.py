@@ -85,7 +85,17 @@ def getTaskInfo():
         return jsonify({'task_title': task.Task_Name, 'id': task.TaskId, 'AddIconId': task.AddIconId})
     else:
         return jsonify({'card_title': 'No card available'})
+    
+@app.route('/changeTaskStatus', methods=['POST'])
+def changeTaskStatus():
+    taskData = request.get_json()
+    TaskId = taskData['TaskId']
+    taskStatus = taskData['taskStatus']
+    task = TaskInfo.query.get(TaskId)
 
+    if task: 
+        task.Task_Status = taskStatus
+        db.session.commit()
 
 if __name__ == '__main__':
     app.run(debug=True)
