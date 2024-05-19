@@ -59,9 +59,10 @@ def createTask():
     taskData = request.get_json()
     task_name = taskData['taskNameData']
     AddIconId = taskData['AddIconId']
+    taskStatus = taskData['taskStatus']
 
 
-    new_task = TaskInfo(Task_Name=task_name, AddIconId=AddIconId)
+    new_task = TaskInfo(Task_Name=task_name, AddIconId=AddIconId, Task_Status=taskStatus)
     db.session.add(new_task)
     db.session.commit()
 
