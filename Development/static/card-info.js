@@ -95,11 +95,13 @@ taskConfirm.addEventListener("click", function(){
                 var TaskTitle = data.task_title;
                 var TaskId = data.id;
                 var AddIconId = data.AddIconId
+                var taskStatus = data.taskStatus
                 var parent = document.getElementById(`${AddIconId}`)
 
                 var newTask = `
                 <div class="task" id="task-${TaskId}">
-                <div class="icon"></div>
+                <img class="icon" id='status-${taskStatus}' src='/static/icons-logo/taskCompletedIcon.png'>
+                <img class="icon" id='status-${taskStatus}' src='/static/icons-logo/taskProgressIcon.png'>
                 <div class="title">${TaskTitle}</div>
                 </div>
                 `;
