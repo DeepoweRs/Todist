@@ -1,11 +1,12 @@
-const addIcon = document.getElementsByClassName('addIcon')[0]
-const cardInfo = document.getElementsByClassName('card-info')[0]
-const taskInfo = document.getElementsByClassName('task-info')[0]
-const cardConfirm = document.getElementsByClassName('confirm-btn')[0]
-const cardCancel = document.getElementsByClassName('cancel-btn')[0]
-const taskConfirm = document.getElementsByClassName('task-confirm-btn')[0]
-const taskCancel = document.getElementsByClassName('task-cancel-btn')[0]
+const addIcon = document.getElementsByClassName('addIcon')[0];
+const cardInfo = document.getElementsByClassName('card-info')[0];
+const taskInfo = document.getElementsByClassName('task-info')[0];
+const cardConfirm = document.getElementsByClassName('confirm-btn')[0];
+const cardCancel = document.getElementsByClassName('cancel-btn')[0];
+const taskConfirm = document.getElementsByClassName('task-confirm-btn')[0];
+const taskCancel = document.getElementsByClassName('task-cancel-btn')[0];
 const mainBg = document.getElementsByClassName("main-bg")[0];
+var CardId = ''
 
 addIcon.addEventListener('click', function(){
     cardInfo.style.display = 'block'
@@ -22,7 +23,7 @@ cardConfirm.addEventListener("click", function(){
             .then(data => {
                 var CardTitle = data.card_title;
                 var DueDate = data.due_date;
-                var CardId = data.id;
+                CardId = data.id;
 
                 var newCard = `
                     <div class="card" id='${CardId}'>
@@ -58,6 +59,21 @@ cardConfirm.addEventListener("click", function(){
                 </div>
                 `;
                 mainBg.insertAdjacentHTML('beforeend', newCard);
+
+                var cardCount = document.querySelectorAll('.card')
+                const card = document.getElementById(`${CardId}`)
+
+                if (cardCount.length == 1){
+                    
+                } else if (cardCount.length == 2) {
+                    card.style.left = '390px';
+                } else if (cardCount.length == 3) {
+                    card.style.left = '690px';
+                } else if (cardCount.length == 4) {
+                    card.style.left = '990px';
+                } else if (cardCount.length == 5) {
+                    card.style.left = '1290px';
+                }
             })
         }, waitTime);
 });
@@ -76,23 +92,34 @@ taskConfirm.addEventListener("click", function(){
             .then(response => response.json())
             .then(data => {
 
-                var cardList = document.querySelectorAll('card')
-
-/*
-                for (each in cardList){
-                    if(card.)
-                }
-*/
                 var TaskTitle = data.task_title;
                 var TaskId = data.id;
+                var AddIconId = data.AddIconId
+                var parent = document.getElementById(`${AddIconId}`)
 
                 var newTask = `
-                <div class="task" id="${TaskId}">
+                <div class="task" id="task-${TaskId}">
                 <div class="icon"></div>
                 <div class="title">${TaskTitle}</div>
                 </div>
                 `;
-                card.insertAdjacentHTML('beforeend', newTask);
+                parent.insertAdjacentHTML('beforeend', newTask);
+
+                var taskCount = parent.querySelectorAll('.task')
+                const task = document.getElementById(`task-${TaskId}`)
+                console.log(taskCount, parent, task)
+
+                if (taskCount.length == 1){
+                    task.style.top = '50px';
+                } else if (taskCount.length == 2) {
+                    task.style.top = '110px';
+                } else if (taskCount.length == 3) {
+                    task.style.top = '170px';
+                } else if (taskCount.length == 4) {
+                    task.style.top = '230px';
+                } else if (taskCount.length == 5) {
+                    task.style.top = '290px';
+                }
             })
         }, waitTime);
 });

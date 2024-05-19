@@ -36,6 +36,7 @@ function sendTaskData() {
         },
         body: JSON.stringify({
             taskNameData: taskNameData,
+            AddIconId: AddIconId
         })
     })
     .then(response => response.text())

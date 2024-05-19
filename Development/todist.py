@@ -24,6 +24,7 @@ class GenerellCardInfo(db.Model):
 class TaskInfo(db.Model):
     __tablename__ = 'Task Info' 
     TaskId = db.Column(db.Integer, primary_key=True)
+    AddIconId = db.Column(db.Integer)
     Task_Name = db.Column(db.Text)
     Task_Description = db.Column(db.Text)
     Task_Status = db.Column(db.Text)
@@ -57,9 +58,10 @@ def createCard():
 def createTask():
     taskData = request.get_json()
     task_name = taskData['taskNameData']
+    AddIconId = taskData['AddIconId']
 
 
-    new_task = TaskInfo(Task_Name=task_name)
+    new_task = TaskInfo(Task_Name=task_name, AddIconId=AddIconId)
     db.session.add(new_task)
     db.session.commit()
 
@@ -79,7 +81,7 @@ def getTaskInfo():
     task = TaskInfo.query.order_by(TaskInfo.TaskId.desc()).first()
 
     if task:
-        return jsonify({'task_title': task.Task_Name, 'id': task.TaskId})
+        return jsonify({'task_title': task.Task_Name, 'id': task.TaskId, 'AddIconId': task.AddIconId})
     else:
         return jsonify({'card_title': 'No card available'})
 
