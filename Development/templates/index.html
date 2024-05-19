@@ -9,8 +9,26 @@
 </head>
 <body>
     <div class="home">
-        <div class="sub-main-text">
-          Organize your work process with Todist for sucssess!
+      <div class="responsive-class">
+        <div class="top-btns">
+          <a href="{{ url_for('index') }}" ><div class="logo">
+            <img class="logo2" src="{{ url_for('static', filename='icons-logo/logo.png') }}" />
+            <div class="todist">Todist</div>
+          </div></a>
+          <div class="top-menu-2">
+            <a href="#"><div class="contact">Contact</div></a>
+            <a href="#"><div class="about-us">About us</div></a>
+            <a href="#"><div class="solutions">Solutions</div></a>
+            <a href="#"><div class="pricing">Pricing</div></a>
+          </div>
+          <div class="top-menu">
+            <a href="{{ url_for('logIn') }}"><div class="log-in-btn">
+              <div class="log-in">Log In</div>
+            </div></a>
+            <a href="#"><div class="sign-up-btn">
+              <div class="sign-up">Sign Up</div>
+            </div></a>
+          </div>
         </div>
         <div class="main-text">
           <span>
@@ -23,57 +41,52 @@
             <span class="main-text-span3">!</span>
           </span>
         </div>
+        <div class="sub-main-text">
+          Organize your work process with Todist for sucssess!
+        </div>
+        <div class="get-started-btn-container">
+          <a href="{{ url_for('workspace') }}">
+            <div class="get-started-btn">
+              <p class="get-started-for-free">Get started for FREE!</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="boxes-flexbox">
+        <div class="feature">
+          <div class="feature-bg"></div>
+          <img class="feature-1-line" src="feature-1-line0.svg" />
+          <div class="image-area-1"></div>
+          <div class="text-1">Cooperate with your teammates</div>
+          <div class="work-with-team">Work with a team</div>
+        </div>
+        <div class="feature">
+          <div class="feature-bg"></div>
+          <div class="work-with-team">Work efficiently</div>
+          <img class="feature-2-line" src="feature-2-line0.svg" />
+          <div class="image-area-1"></div>
+          <div class="text-1">Label your tasks and categorize them</div>
+        </div>
+        <div class="feature">
+          <div class="feature-bg"></div>
+          <div class="work-with-team">Set Dates</div>
+          <img class="feature-3-line" src="feature-3-line0.svg" />
+          <div class="image-area-1"></div>
+          <div class="text-1">Set dates for your tasks</div>
+        </div>
+      </div>
+      <div class="boxes-flexbox">
         <div class="learn-to-use">
           <div class="lear-bg"></div>
-          <div class="learn-how-to-use">Learn how to use!</div>
+          <p class="learn-how-to-use">Learn how to use!</p>
+          <img class="line-line" src="line-line0.svg" />
           <div class="learn-videa"></div>
         </div>
-        <div class="feature-1">
-          <div class="feature-1-bg"></div>
-          <div class="work-with-team">Work with team</div>
-          <div class="image-area-1"></div>
-          <div class="text-1">eu feugiat pretium nibh ipsum consequat nisl vel</div>
-        </div>
-        <div class="feature-2">
-          <div class="feature-2-bg"></div>
-          <div class="work-with-team2">Work with team</div>
-          <div class="image-area-2"></div>
-          <div class="text-2">eu feugiat pretium nibh ipsum consequat nisl vel</div>
-        </div>
-        <div class="feature-3">
-          <div class="feature-3-bg"></div>
-          <div class="work-with-team3">Work with team</div>
-          <div class="image-area-3"></div>
-          <div class="text-3">eu feugiat pretium nibh ipsum consequat nisl vel</div>
-        </div>
-        <a href="{{ url_for('workspace') }}"><div class="get-started-btn">
-          <div class="get-started-for-free">Get started for FREE!</div>
-        </div></a>
-        <div class="nav-bg"></div>
-        <div class="lorem">lorem</div>
-        <div class="lorem2">lorem</div>
-        <div class="lorem3">lorem</div>
-        <div class="lorem4">lorem</div>
-        <div class="lorem5">lorem</div>
-        <div class="lorem6">lorem</div>
-        <div class="lorem7">lorem</div>
-        <div class="lorem8">lorem</div>
-        <div class="lorem9">lorem</div>
-        <div class="lorem10">lorem</div>
-        <div class="lorem11">lorem</div>
-        <div class="lorem12">lorem</div>
-        <div class="lorem13">lorem</div>
-        <div class="lorem14">lorem</div>
-        <div class="lorem15">lorem</div>
-        <div class="lorem16">lorem</div>
-        <div class="lorem17">lorem</div>
-        <div class="lorem18">lorem</div>
-        <div class="lorem19">lorem</div>
-        <div class="lorem20">lorem</div>
-        <div class="lorem21">lorem</div>
-        <div class="lorem22">lorem</div>
-        <div class="lorem23">lorem</div>
-        <div class="lorem24">lorem</div>
+      </div>
+      <div class="nav-bg">
+        <p class="lorem">Contact Us!</p>
+        <p class="lorem">Number: 420 69 420</p>
+        <p class="lorem">Address: Stormy Str. 69, Jupiter</p>
         <img class="social-media-logos" src="social-media-logos0.png" />
         <div class="credit">
           <span>
@@ -83,23 +96,7 @@
           </span>
         </div>
         <div class="credit-year">2024</div>
-        <a href="{{ url_for('index') }}" ><div class="logo">
-          <img class="logo2" src="{{ url_for('static', filename='icons-logo/logo.png') }}" />
-          <div class="todist">Todist</div>
-        </div></a>
-        <div class="top-menu-2">
-          <a href="#"><div class="contact">Contact</div></a>
-          <a href="#"><div class="about-us">About us</div></a>
-          <a href="#"><div class="solutions">Solutions</div></a>
-          <a href="#"><div class="pricing">Pricing</div></a>
-        </div>
-        <a href="{{ url_for('logIn') }}"><div class="log-in-btn">
-          <div class="log-in">Log In</div>
-        </div></a>
-        <a href="#"><div class="sign-up-btn">
-          <div class="sign-up">Sign Up</div>
-        </div></a>
       </div>
-
+      </div>
 </body>
 </html>
