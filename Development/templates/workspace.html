@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todist</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='workspace.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='cards.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='cardInfo.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='taskInfo.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='tasks.css') }}">
+    <link rel="stylesheet" href="workspace.css">
+    <link rel="stylesheet" href="cards.css">
+    <link rel="stylesheet" href="cardInfo.css">
+    <link rel="stylesheet" href="taskInfo.css">
+    <link rel="stylesheet" href="tasks.css">
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icons-logo/logo_shortcut.png') }}">
 </head>
 <body>
     <div class="workspace">
-        <div class="main-bg">
-          <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
-          <a href="#">
-            <div class="help-btn">
-            <div class="help">Help</div>
-          </div>
-          </a>
-        </div>
         <div class="top-menu">
-          <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
-          <a href="#">
-            <div class="share-btn">
-            <div class="share">Share</div>
-          </div></a>
-          <a href="#"><div class="change-bg">
-            <div class="change-bg-text">Change BG</div>
-          </div></a>
-        <input type="file" id="fileInput" class="fileInput" onchange="changeBg(this)">        
-          <a href="#"><div class="top-rec"></div></a>
-          <a href="#"><div class="board">Board</div></a>
-          <a href="#"><div class="timeline">Timeline</div></a>
-          <a href="#"><div class="calendar">Calendar</div></a>
-          <a href="#"><div class="table">Table</div></a>
+            <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
+          <input type="file" id="fileInput" class="fileInput" onchange="changeBg(this)">      
+            <a href="#"><div class="top-rec">
+                <div class="board">Board</div>
+            </div></a>
+            <a href="#"><div class="timeline">Timeline</div></a>
+            <a href="#"><div class="calendar">Calendar</div></a>
+            <a href="#"><div class="table">Table</div></a>
+            <div class="flex">
+            <a href="#">
+              <div class="shareBtnBg"></div>
+                <div class="share-btn">
+                <p class="share">Share</p>
+              </div></a>
+              <a href="#"><div class="change-bg">
+                <div class="change-bg-text">Change BG</div>
+              </div></a>
+          </div>
+        </div>
+        <div class="main-bg">
+          <div class="flex2">
+            <div class="flex3">
+              <p class="credit">Developed by <em><b>ZETA</b></em> Group</p>
+              <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
+              <a href="#">
+                <div class="help-btn">
+                  <div class="help">Help
+                  </div>
+                </div>
+              </a>
+            </div>
         </div>
         <div class="card-info">
           <div class="card-info2">Card Info</div>
@@ -77,12 +86,11 @@
             <div class="task-cancel">Cancel</div>
           </div></a>
         </div>
-        <div class="credit">Developed by <em><b>ZETA</b></em> Group</div>
     </div>
 </body>
-<script src="{{ url_for('static', filename='effects.js') }}"></script>
-<script src="{{ url_for('static', filename='card-info.js') }}"></script>
-<script src="{{ url_for('static', filename='create-card-task.js') }}"></script>
-<script src="{{ url_for('static', filename='delete-card.js') }}"></script>
-<script src="{{ url_for('static', filename='add-task.js') }}"></script>
+<script src="effects.js"></script>
+<script src="card-info.js"></script>
+<script src="create-card-task.js"></script>
+<script src="delete-card.js"></script>
+<script src="add-task.js"></script>
 </html>
