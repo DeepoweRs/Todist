@@ -32,25 +32,18 @@ cardConfirm.addEventListener("click", function(){
                     <img class="line-8" src="line-80.svg" />
                     <img class="line-7" src="line-70.svg" />
                     <a href="#"><div class="situation" id='situation-${CardId}'>
-                    <div class="completed">Completed</div>
+                    <div class="situation-text">Completed</div>
                     </div></a>
                     <div class="due">${DueDate}</div>
                     <div class="categories">
-                    <div class="group-52">
-                        <div class="rectangle-35"></div>
+                    <div class="categ-1">
                         <div class="category-1">Category 1</div>
                     </div>
-                    <div class="group-51">
-                        <div class="rectangle-36"></div>
+                    <div class="categ-2">
                         <div class="category-2">Category 2</div>
                     </div>
-                    <div class="group-50">
-                        <div class="rectangle-37"></div>
+                    <div class="categ-3">
                         <div class="category-3">Category 3</div>
-                    </div>
-                    <div class="group-49">
-                        <div class="rectangle-38"></div>
-                        <div class="ct-4">Ct. 4</div>
                     </div>
                     </div>
                     <div class="card-title">${CardTitle}</div>
@@ -76,19 +69,23 @@ cardConfirm.addEventListener("click", function(){
                 }
 
                 const situation = document.getElementById(`situation-${CardId}`)
-                var situationBg = window.getComputedStyle(situation).background
+                const sitouationText = situation.getElementsByClassName('situation-text')[0]
+                var situationColor = 'green'
         
                 situation.addEventListener('click', function(){
-                        if (situationBg == 'rgb(145, 216, 134)') {
-                            situation.style.background = '#E7E27C'
-                            console.log(situationBg)
-                        } else if (situationBg == 'rgb(231, 226, 124)') {
-                            situation.style.background = '#FA7C7C'
-                            console.log(situationBg)
-                        } else if (situationBg == 'rgb(250, 124, 124)') {
-                            situation.style.background = '#E7E27C'
-                            console.log(situationBg)
-                        }
+                    if (situationColor === 'green') {
+                        situation.style.background = 'rgb(231, 226, 124)'
+                        situationColor = 'yellow'
+                        sitouationText.innerHTML = 'In Progress'
+                    } else if (situationColor === 'yellow') {
+                        situation.style.background = 'rgb(250, 124, 124)'
+                        situationColor = 'red'
+                        sitouationText.innerHTML = 'Problem Detected'
+                    } else if (situationColor === 'red'){
+                        situation.style.background = 'rgb(145, 216, 134)'
+                        situationColor = 'green'
+                        sitouationText.innerHTML = 'Completed'
+                    };
                 });
             })
         }, waitTime);
@@ -159,7 +156,29 @@ taskConfirm.addEventListener("click", function(){
                 completedIcon.addEventListener('click', function(){
                     completedIcon.style.display = 'none'
                     progressIcon.style.display = 'block'
-                    fetch('changeTaskStatus', {
+                    
+                    var xhr = new XMLHttpRequest();
+                    var url = "/changeTaskStatus"; // Göndermek istediğiniz URL'yi buraya yazın
+                    var data = {
+                        taskStatus: 0,
+                        TaskId: TaskId   
+                    };
+
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-type", "application/json");
+
+                    xhr.onerror = function() {
+                        console.error("Error");
+                    };
+
+                    xhr.onload = function() {
+                        // Konsola herhangi bir mesaj yazdırmıyoruz
+                    };
+                    
+                    xhr.send(JSON.stringify(data));
+                    
+                    
+                    /*fetch('changeTaskStatus', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -168,7 +187,7 @@ taskConfirm.addEventListener("click", function(){
                             taskStatus: 0,
                             TaskId: TaskId   
                         })
-                    });
+                    });*/
                 })
             })
         }, waitTime);

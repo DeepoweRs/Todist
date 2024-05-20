@@ -42,13 +42,13 @@
 }
 .title {
   color: #424242;
-  text-align: center;
+  text-align: left;
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   position: absolute;
   left: 16px;
-  top: 16.1px;
-  width: 75px;
+  top: 11px;
+  width: 180px;
   height: 20.88px;
 }
