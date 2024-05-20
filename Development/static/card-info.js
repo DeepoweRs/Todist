@@ -31,7 +31,7 @@ cardConfirm.addEventListener("click", function(){
                     <img class="line-9" src="line-90.svg" />
                     <img class="line-8" src="line-80.svg" />
                     <img class="line-7" src="line-70.svg" />
-                    <a href="#"><div class="situation">
+                    <a href="#"><div class="situation" id='situation-${CardId}'>
                     <div class="completed">Completed</div>
                     </div></a>
                     <div class="due">${DueDate}</div>
@@ -74,6 +74,22 @@ cardConfirm.addEventListener("click", function(){
                 } else if (cardCount.length == 5) {
                     card.style.left = '1290px';
                 }
+
+                const situation = document.getElementById(`situation-${CardId}`)
+                var situationBg = window.getComputedStyle(situation).background
+        
+                situation.addEventListener('click', function(){
+                        if (situationBg == 'rgb(145, 216, 134)') {
+                            situation.style.background = '#E7E27C'
+                            console.log(situationBg)
+                        } else if (situationBg == 'rgb(231, 226, 124)') {
+                            situation.style.background = '#FA7C7C'
+                            console.log(situationBg)
+                        } else if (situationBg == 'rgb(250, 124, 124)') {
+                            situation.style.background = '#E7E27C'
+                            console.log(situationBg)
+                        }
+                });
             })
         }, waitTime);
 });
@@ -154,7 +170,6 @@ taskConfirm.addEventListener("click", function(){
                         })
                     });
                 })
-
             })
         }, waitTime);
 });
