@@ -71,9 +71,14 @@ def createTask():
 @app.route('/getCardInfo')
 def getCardInfo():
     card = GenerellCardInfo.query.order_by(GenerellCardInfo.CardId.desc()).first()
+    tags = card.Tags.split(',')
+
+    tag1 = tags[0]
+    tag2 = tags[1]
+    tag3 = tags[2]
 
     if card:
-        return jsonify({'card_title': card.Card_Name, 'due_date': card.Finish_Date, 'id': card.CardID})
+        return jsonify({'card_title': card.Card_Name, 'due_date': card.Finish_Date, 'id': card.CardID, 'tag1': tag1, 'tag2': tag2, 'tag3': tag3})
     else:
         return jsonify({'card_title': 'No card available', 'due_date': 'No card available'})
     

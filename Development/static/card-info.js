@@ -24,6 +24,9 @@ cardConfirm.addEventListener("click", function(){
                 var CardTitle = data.card_title;
                 var DueDate = data.due_date;
                 CardId = data.id;
+                tag1 = data.tag1
+                tag2 = data.tag2
+                tag3 = data.tag3
 
                 var newCard = `
                     <div class="card" id='${CardId}'>
@@ -37,13 +40,13 @@ cardConfirm.addEventListener("click", function(){
                     <div class="due">${DueDate}</div>
                     <div class="categories">
                     <div class="categ-1">
-                        <div class="category-1">Category 1</div>
+                        <div class="category-1">${tag1}</div>
                     </div>
                     <div class="categ-2">
-                        <div class="category-2">Category 2</div>
+                        <div class="category-2">${tag2}</div>
                     </div>
                     <div class="categ-3">
-                        <div class="category-3">Category 3</div>
+                        <div class="category-3">${tag3}</div>
                     </div>
                     </div>
                     <div class="card-title">${CardTitle}</div>
