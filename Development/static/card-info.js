@@ -122,6 +122,7 @@ taskConfirm.addEventListener("click", function(){
             .then(data => {
 
                 var TaskTitle = data.task_title;
+                var taskDescription = data.taskDescription;
                 var TaskId = data.id;
                 var AddIconId = data.AddIconId
                 var taskStatus = data.taskStatus
@@ -131,7 +132,9 @@ taskConfirm.addEventListener("click", function(){
                 <div class="task" id="task-${TaskId}">
                 <a href='#'><img class="completedIcon" id='status-${taskStatus}' src='/static/icons-logo/taskCompletedIcon.png'></a>
                 <a href='#'><img class="progressIcon" id='status-${taskStatus}' src='/static/icons-logo/taskProgressIcon.png'></a>
+                <a href='#'><img class="problemIcon" id='status-${taskStatus}' src='/static/icons-logo/taskProblemIcon.png'></a>
                 <div class="title">${TaskTitle}</div>
+                <div class="description">${taskDescription}</div>
                 </div>
                 `;
                 parent.insertAdjacentHTML('beforeend', newTask);
@@ -154,9 +157,11 @@ taskConfirm.addEventListener("click", function(){
 
                 const progressIcon = document.getElementById(`task-${TaskId}`).getElementsByClassName('progressIcon')[0];
                 const completedIcon = document.getElementById(`task-${TaskId}`).getElementsByClassName('completedIcon')[0];
+                const problemIcon = document.getElementById(`task-${TaskId}`).getElementsByClassName('problemIcon')[0];
 
                 progressIcon.addEventListener('click', function(){
                     progressIcon.style.display = 'none'
+                    problemIcon.style.display = 'none'
                     completedIcon.style.display = 'block'
                     fetch('changeTaskStatus', {
                         method: 'POST',
@@ -171,7 +176,29 @@ taskConfirm.addEventListener("click", function(){
                 })
                 completedIcon.addEventListener('click', function(){
                     completedIcon.style.display = 'none'
+                    progressIcon.style.display = 'none'
+                    problemIcon.style.display = 'block'
+                    
+                    var xhr = new XMLHttpRequest();
+                    var url = "/changeTaskStatus";
+                    var data = {
+                        taskStatus: -1,
+                        TaskId: TaskId   
+                    };
+
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-type", "application/json");
+
+                    xhr.onerror = function() {
+                        console.error("Error");
+                    };
+                    
+                    xhr.send(JSON.stringify(data));
+                })
+                problemIcon.addEventListener('click', function(){
+                    completedIcon.style.display = 'none'
                     progressIcon.style.display = 'block'
+                    problemIcon.style.display = 'none'
                     
                     var xhr = new XMLHttpRequest();
                     var url = "/changeTaskStatus";

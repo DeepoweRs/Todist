@@ -28,6 +28,7 @@ cardConfirm.addEventListener('click', sendCardData);
 
 function sendTaskData() {
     var taskNameData = document.getElementById("taskNameData").value;
+    var taskDescriptionData = document.getElementById("taskDescriptionData").value;
     var taskStatus = 0
 
     fetch('/createTask', {
@@ -38,8 +39,8 @@ function sendTaskData() {
         body: JSON.stringify({
             taskNameData: taskNameData,
             AddIconId: AddIconId,
-            taskStatus: taskStatus
-
+            taskStatus: taskStatus,
+            taskDescriptionData: taskDescriptionData
         })
     })
     .then(response => response.text())

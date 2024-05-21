@@ -60,9 +60,10 @@ def createTask():
     task_name = taskData['taskNameData']
     AddIconId = taskData['AddIconId']
     taskStatus = taskData['taskStatus']
+    taskDescription = taskData['taskDescriptionData']
 
 
-    new_task = TaskInfo(Task_Name=task_name, AddIconId=AddIconId, Task_Status=taskStatus)
+    new_task = TaskInfo(Task_Name=task_name, AddIconId=AddIconId, Task_Status=taskStatus, Task_Description=taskDescription)
     db.session.add(new_task)
     db.session.commit()
 
@@ -87,7 +88,7 @@ def getTaskInfo():
     task = TaskInfo.query.order_by(TaskInfo.TaskId.desc()).first()
 
     if task:
-        return jsonify({'task_title': task.Task_Name, 'id': task.TaskId, 'AddIconId': task.AddIconId})
+        return jsonify({'task_title': task.Task_Name, 'id': task.TaskId, 'AddIconId': task.AddIconId, 'taskDescription': task.Task_Description})
     else:
         return jsonify({'card_title': 'No card available'})
     
