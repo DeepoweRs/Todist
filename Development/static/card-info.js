@@ -76,10 +76,23 @@ cardConfirm.addEventListener("click", function(){
                 var situationColor = 'green'
         
                 situation.addEventListener('click', function(){
+                    const progressIcons = card.querySelectorAll('.progressIcon')
+                    const completedIcons = card.querySelectorAll('.completedIcon')
+
                     if (situationColor === 'green') {
                         situation.style.background = 'rgb(231, 226, 124)'
                         situationColor = 'yellow'
                         sitouationText.innerHTML = 'In Progress'
+                        if (completedIcons) {
+                            console.log(completedIcons, progressIcons)
+                            for (i in completedIcons){
+                                console.log(i)
+                                each.style.display = 'none'
+                            }
+                            for (each in completedIcons){
+                                each.style.display = 'block'
+                            }
+                        }
                     } else if (situationColor === 'yellow') {
                         situation.style.background = 'rgb(250, 124, 124)'
                         situationColor = 'red'
@@ -161,7 +174,7 @@ taskConfirm.addEventListener("click", function(){
                     progressIcon.style.display = 'block'
                     
                     var xhr = new XMLHttpRequest();
-                    var url = "/changeTaskStatus"; // Göndermek istediğiniz URL'yi buraya yazın
+                    var url = "/changeTaskStatus";
                     var data = {
                         taskStatus: 0,
                         TaskId: TaskId   
@@ -173,24 +186,8 @@ taskConfirm.addEventListener("click", function(){
                     xhr.onerror = function() {
                         console.error("Error");
                     };
-
-                    xhr.onload = function() {
-                        // Konsola herhangi bir mesaj yazdırmıyoruz
-                    };
                     
                     xhr.send(JSON.stringify(data));
-                    
-                    
-                    /*fetch('changeTaskStatus', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({
-                            taskStatus: 0,
-                            TaskId: TaskId   
-                        })
-                    });*/
                 })
             })
         }, waitTime);
