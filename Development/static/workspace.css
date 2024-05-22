@@ -210,7 +210,7 @@ body {
   transition: scale 0.2s ease;
 }
 .addIcon:hover {
-    scale: 55%;
+  scale: 55%;
 }
 .credit {
   color: #424242;
@@ -225,15 +225,14 @@ body {
   height: 13.9px;
 }
 .tools-bar {
-  background: #f0f0f0;
-  border-radius: 10px;
-  border-style: solid;
-  border-color: #d4d4d4;
-  border-width: 3px;
-  width: 61px;
-  height: 258px;
-  left: 16px;
-  top: 90px;
+  width: 46px;
+  height: 252px;
+  left: 22px;
+  top: 163px;
+  background: #d2d2d2;
+  border-radius: 5px;
+  border: solid 1px #424242;
+  scale: 1.5;
   position: absolute;
 }
 .branch-tool {
@@ -245,14 +244,14 @@ body {
   width: 35px;
   height: 35.71px;
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 207px;
 }
 .connection-tool {
   width: 17px;
   height: 23px;
   position: absolute;
-  left: 8px;
+  left: 7px;
   top: 7px;
   object-fit: cover;
 }
@@ -267,6 +266,20 @@ body {
   position: absolute;
   left: 842px;
   top: 21px;
+}
+.search-input{
+  color: #424242;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.5;
+  left: 40px;
+  top: 5px;
+  pointer-events: auto;
+  position: absolute;
+  height: 25px;
+  width: 170px;
 }
 .asset-40 {
   width: 23px;
@@ -285,7 +298,7 @@ body {
   width: 35px;
   height: 35.71px;
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 157px;
 }
 .asset-36 {
@@ -305,7 +318,7 @@ body {
   width: 35px;
   height: 35.71px;
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 108px;
 }
 .asset-38 {
@@ -325,14 +338,14 @@ body {
   width: 35px;
   height: 35.71px;
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 57px;
 }
 .asset-37 {
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 6px;
+  left: 5px;
   top: 6px;
   object-fit: cover;
 }
@@ -345,7 +358,7 @@ body {
   width: 35px;
   height: 35.71px;
   position: absolute;
-  left: 10px;
+  left: 4px;
   top: 9px;
 }
 .asset-39 {

@@ -47,8 +47,9 @@ def createCard():
     card_name = cardData['cardNameData']
     tags = cardData['tagData']
     finish_date = cardData['dueData']
+    cardStatus = cardData['cardStatus']
 
-    new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date)
+    new_card = GenerellCardInfo(Card_Name=card_name, Tags=tags, Finish_Date=finish_date, Situation=cardStatus)
     db.session.add(new_card)
     db.session.commit()
 
@@ -102,6 +103,7 @@ def changeTaskStatus():
     if task: 
         task.Task_Status = taskStatus
         db.session.commit()
+
 
 if __name__ == '__main__':
     app.run(debug=True)

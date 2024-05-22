@@ -57,17 +57,11 @@ body {
   font-weight: 800;
 }
 .learn-to-use {
-  width: 1228px;
-  height: 664px;
-  position: static;
-}
-.lear-bg {
   background: #f7f7f7;
   border-radius: 10px;
   border-style: solid;
   border-color: #c8c8c8;
   border-width: 3px;
-  opacity: 0.699999988079071;
   width: 1228px;
   height: 664px;
   position: absolute;
@@ -81,8 +75,8 @@ body {
   font-size: 27px;
   font-weight: 600;
   position: absolute;
-  left: 144px;
-  top: 1112px;
+  left: 30px;
+  top: 20px;
   width: 351px;
 }
 .line-line {
@@ -99,8 +93,8 @@ body {
   width: 1174px;
   height: 558px;
   position: absolute;
-  left: 144px;
-  top: 1165px;
+  left: 20px;
+  top: 70px;
 }
 .feature-1:hover{
   box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.25);
@@ -159,7 +153,7 @@ body {
   font-weight: 600;
   position: absolute;
   left: 978px;
-  top: 946px;
+  top: 921px;
   width: 340px;
 }
 .feature-2 {
@@ -197,7 +191,7 @@ body {
 .image-area-2 {
   border-radius: 16px;
   width: 216px;
-  height: 211px;
+  height: 215px;
   left: 81px;
   top: 110px;
   position: absolute;
@@ -210,7 +204,7 @@ body {
   font-weight: 600;
   position: absolute;
   left: 545px;
-  top: 946px;
+  top: 925px;
   width: 340px;
 }
 .feature-3 {
@@ -247,9 +241,9 @@ body {
 }
 .image-area-3 {
   border-radius: 16px;
-  width: 280px;
+  width: 290px;
   height: 184px;
-  left: 49px;
+  left: 45px;
   top: 126px;
   position: absolute;
 }
@@ -261,7 +255,7 @@ body {
   font-weight: 600;
   position: absolute;
   left: 112px;
-  top: 946px;
+  top: 912px;
   width: 340px;
 }
 .get-started-btn {

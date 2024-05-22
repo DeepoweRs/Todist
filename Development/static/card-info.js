@@ -10,6 +10,10 @@ var CardId = ''
 
 addIcon.addEventListener('click', function(){
     cardInfo.style.display = 'block'
+
+    addIcon.style.left = "1102px"
+    addIcon.style.top = "426px"
+    addIcon.style.scale = "15%"
 })
 
 cardConfirm.addEventListener("click", function(){
@@ -35,7 +39,7 @@ cardConfirm.addEventListener("click", function(){
                     <img class="line-8" src="line-80.svg" />
                     <img class="line-7" src="line-70.svg" />
                     <a href="#"><div class="situation" id='situation-${CardId}'>
-                    <div class="situation-text">Completed</div>
+                    <div class="situation-text">In Progress</div>
                     </div></a>
                     <div class="due">${DueDate}</div>
                     <div class="categories">
@@ -73,38 +77,48 @@ cardConfirm.addEventListener("click", function(){
 
                 const situation = document.getElementById(`situation-${CardId}`)
                 const sitouationText = situation.getElementsByClassName('situation-text')[0]
-                var situationColor = 'green'
+                var situationColor = 'yellow'
         
                 situation.addEventListener('click', function(){
-                    const progressIcons = card.querySelectorAll('.progressIcon')
-                    const completedIcons = card.querySelectorAll('.completedIcon')
 
                     if (situationColor === 'green') {
-                        situation.style.background = 'rgb(231, 226, 124)'
-                        situationColor = 'yellow'
-                        sitouationText.innerHTML = 'In Progress'
-                        if (completedIcons) {
-                            console.log(completedIcons, progressIcons)
-                            for (i in completedIcons){
-                                console.log(i)
-                                each.style.display = 'none'
-                            }
-                            for (each in completedIcons){
-                                each.style.display = 'block'
-                            }
-                        }
-                    } else if (situationColor === 'yellow') {
                         situation.style.background = 'rgb(250, 124, 124)'
                         situationColor = 'red'
                         sitouationText.innerHTML = 'Problem Detected'
-                    } else if (situationColor === 'red'){
+                    } else if (situationColor === 'yellow') {
                         situation.style.background = 'rgb(145, 216, 134)'
                         situationColor = 'green'
                         sitouationText.innerHTML = 'Completed'
+                    } else if (situationColor === 'red'){
+                        situation.style.background = 'rgb(231, 226, 124)'
+                        situationColor = 'yellow'
+                        sitouationText.innerHTML = 'In Progress'
                     };
                 });
             })
         }, waitTime);
+
+    var waitTime = 800;
+
+    setTimeout(function() {
+
+        document.querySelectorAll('.delete').forEach(icon => {
+            icon.addEventListener('click', function() {
+                var cardId = this.id.split('-')[1];
+                var card = document.getElementById(cardId);
+
+                var cardInfo = document.getElementsByClassName('card-info')[0];
+                cardInfo.style.display = 'none';
+
+                if (card) { 
+                    card.remove();
+                } else {
+                    console.error("No card like:", cardId);
+                }
+            });
+        });
+    }, waitTime);
+
 });
 
 cardCancel.addEventListener("click", function(){
