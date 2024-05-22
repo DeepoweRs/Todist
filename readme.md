@@ -1,4 +1,4 @@
-# Group Zetta (Om oss)
+# Group Zeta (Om oss)
 ## Medlemmer: Bedirhan, Ømer, Eimantas, Dennis, Ivo
 
 Vi tok inspirasjon fra nettsider som Trello og prøvde å lage en nettside som fokuserer mer på funksjonalitet. Målet vårt var å forenkle oppgavehåndtering og øke produktiviteten. Hvem jobbet med hva:
