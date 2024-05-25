@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todist</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='workspace.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cards.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cardInfo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='taskInfo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='tasks.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='icons-logo/logo_shortcut.png') }}">
+</head>
+<body>
+    <div class="workspace">
+        <div class="main-bg">
+          <a href="#"><img src="{{ url_for('static', filename='icons-logo/addIcon.png') }}" class="addIcon"></a>
+          <a href="#">
+            <div class="help-btn">
+            <div class="help">Help</div>
+          </div>
+          </a>
+        </div>
+        <div class="top-menu">
+          <a href="{{ url_for('index') }}"><img class="logo" src="{{ url_for('static', filename='icons-logo/logo.png') }}"/></a>
+          <a href="#">
+            <div class="share-btn">
+            <div class="share">Share</div>
+          </div></a>
+          <a href="#"><div class="change-bg">
+            <div class="change-bg-text">Change BG</div>
+          </div></a>
+        <input type="file" id="fileInput" class="fileInput" onchange="changeBg(this)">        
+          <a href="#"><div class="top-rec"></div></a>
+          <a href="#"><div class="board">Board</div></a>
+          <a href="#"><div class="timeline">Timeline</div></a>
+          <a href="#"><div class="calendar">Calendar</div></a>
+          <a href="#"><div class="table">Table</div></a>
+          <a href="#"><div class="search-tool">
+            <img class="asset-40" src="{{ url_for('static', filename='icons-logo/search.png') }}" />
+            <input type="text" placeholder="Search by tags" class="search-input"></input>
+          </div></a>
+          <div class="tools-bar">
+            <a href="#"><div class="branch-tool">
+            <img class="connection-tool" src="{{ url_for('static', filename='icons-logo/branch.png') }}" />
+          </div></a>
+          <a href="#"><div class="filter-tool">
+            <img class="asset-36" src="{{ url_for('static', filename='icons-logo/filter.png') }}" />
+          </div></a>
+          <a href="#"><div class="screenshot-tool">
+            <img class="asset-38" src="{{ url_for('static', filename='icons-logo/screenshot.png') }}" />
+          </div></a>
+          <a href="#"><div class="sticker-tool">
+            <img class="asset-37" src="{{ url_for('static', filename='icons-logo/sticker.png') }}" />
+          </div></a>
+          <a href="#"><div class="notes-tool">
+            <img class="asset-39" src="{{ url_for('static', filename='icons-logo/notes.png') }}" />
+            </div></a>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-info2">Card Info</div>
+          <div class="card-name-info">
+            <div class="card-name2">Card Name</div>
+            <input name="nameData" type="text" placeholder="What is the name of the card?" id="nameData" class="name-info-content">
+            </input>
+            <div class="card-name-info-line"></div>
+          </div>
+          <div class="finish-info">
+            <div class="finish-date2">Finish Date</div>
+            <input name="deuData" type="text" placeholder="When is the due date?" id="dueData" class="finish-info-content">
+            <div class="finish-info-line"></div>
+          </div>
+          <div class="tag-info">
+            <div class="tag2">Categories</div>
+            <input name="tagData" type="text" placeholder="Split tags with ','" id="tagData" class="tag-info-content">
+            <div class="tag-info-line"></div>
+          </div>
+          <a href="#"><div class="confirm-btn">
+            <div class="confirm">Confirm</div>
+          </div></a>
+          <a href="#"><div class="cancel-btn">
+            <div class="cancel">Cancel</div>
+          </div></a>
+        </div>
+        <div class="task-info">
+          <div class="task-info2">Task Info</div>
+          <div class="task-name-info">
+            <div class="task-name2">Task Name</div>
+            <input name="taskNameData" type="text" placeholder="What is the name of the task?" id="taskNameData" class="task-name-info-content"></input>
+            <div class="task-name-info-line"></div>
+          </div>
+          <div class="task-description-info">
+            <div class="task-description2">Task Des.</div>
+            <input name="taskDescriptionData" type="text" placeholder="What is the task about?" id="taskDescriptionData" class="task-description-info-content"></input>
+            <div class="task-description-info-line"></div>
+          </div>
+          <a href="#"><div class="task-confirm-btn">
+            <div class="task-confirm">Confirm</div>
+          </div></a>
+          <a href="#"><div class="task-cancel-btn">
+            <div class="task-cancel">Cancel</div>
+          </div></a>
+        </div>
+        <div class="credit">Developed by <em><b>ZETA</b></em> Group</div>
+    </div>
+</body>
+<script src="{{ url_for('static', filename='effects.js') }}"></script>
+<script src="{{ url_for('static', filename='card-info.js') }}"></script>
+<script src="{{ url_for('static', filename='create-card-task.js') }}"></script>
+<script src="{{ url_for('static', filename='delete-card.js') }}"></script>
+<script src="{{ url_for('static', filename='add-task.js') }}"></script>
+</html>
